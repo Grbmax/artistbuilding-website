@@ -1,27 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html,
+body,
+:root{
+  height: 100%;
+  background-color: black;
+  color: #cfcfcf;
+  font-family: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.font-heading {
+  font-family: var(--font-arvo);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.primary-color {
+  background-color: #7765c8;
+  color: black;
+}
+
+.primary-text {
+  color: #7765c8;
+}
+
+.secondary-color {
+  background-color: #ffffff;
+  color: black;
+}
+
+.secondary-text {
+  color: #ffffff;
+}
+
+.accent-color {
+  background-color: #252565;
+  color: white;
+}
+
+.accent-text {
+  color: #252565;
 }
