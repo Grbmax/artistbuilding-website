@@ -24,9 +24,13 @@ const HighlightCard: React.FC<HighlightsData> = ({
           <ThreePlusGrid />
         </div>
       </div>
-      <div className='min-h-screen w-full flex flex-col border text-white md:flex md:flex-row md:justify-evenly'>
-        <div className='flex flex-1 md:min-h-screen border w-full items-end justify-center md:justify-end'>A</div>
-        <div className='flex flex-1 md:min-h-screen border w-full items-start justify-center md:justify-start'>B</div>
+      <div className='flex min-h-screen w-full flex-col border text-white md:flex md:flex-row md:justify-evenly'>
+        <div className='flex w-full flex-1 items-end justify-center border md:min-h-screen md:justify-end'>
+          A
+        </div>
+        <div className='flex w-full flex-1 items-start justify-center border md:min-h-screen md:justify-start'>
+          B
+        </div>
       </div>
     </div>
   );
