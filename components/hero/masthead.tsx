@@ -26,7 +26,6 @@ const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
   useEffect(() => {
     setImageLoaded(true);
   }, []);
-  console.log(imageLoaded, 'imageLoaded');
 
   return (
     <div
