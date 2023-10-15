@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+// import Image from 'next/image';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Building, ChevronDown } from 'lucide-react';
 
 import { ScrollContext } from '@/lib/scroll-observer';
