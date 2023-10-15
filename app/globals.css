@@ -6,7 +6,6 @@ html,
 body,
 :root{
   height: 100%;
-  background-color: black;
   color: #cfcfcf;
   font-family: var(--font-montserrat);
 }
@@ -40,4 +39,19 @@ body,
 
 .accent-text {
   color: #252565;
+}
+
+@keyframes plus-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.hover\:animation-spin:hover {
+  animation: plus-spin 0.5s linear forwards;
 }

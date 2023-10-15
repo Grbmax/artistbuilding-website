@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className='mt-8 border-t'>
+    <footer className='bg-black border-t'>
       <div className='w-full'>
         <h1 className='pt-2 text-center text-2xl font-semibold italic primary-text'>
           The ArtistBuilding

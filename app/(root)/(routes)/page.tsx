@@ -1,16 +1,16 @@
-import Button from '@/components/ui/button';
-import Container from '@/components/ui/container';
+import { getAsset } from '@/lib/Contentful/Asset/get-asset';
+import { getReelID } from '@/lib/Contentful/Hero/get-reel';
 
-export default function Home() {
+import MastHead from '@/components/hero/masthead';
+import Tagline from '@/components/tagline/tagline';
+
+export default async function Home() {
+  const reelID = await getReelID();
+  const reelURL = await getAsset(reelID);
   return (
-    <Container>
-      <div className='flex flex-col items-start space-y-4'>
-        <h1 className='font-heading text-6xl'>Heading</h1>
-        <Button className='primary-color text-sm'>Primary</Button>
-        <Button className='secondary-color text-sm'>Secondary</Button>
-        <Button className='accent-color text-sm'>Accent</Button>
-      </div>
-    </Container>
-    
+    <div>
+      <MastHead reelURL={reelURL} />
+      <Tagline />
+    </div>
   );
 }

@@ -10,6 +10,8 @@ if (!CF_SPACE_ID || !CF_CMA_TOKEN) {
 //Define constants
 export const LOCALE = "en-US";
 export const ENVIORNMENT_ID = "master";
+export const HERO_TYPE = "homePage"
+export const HIGHLIGHTS_TYPE = "workHighlights"
 
 //Create client
 export const cmaClient = createClient(

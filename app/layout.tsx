@@ -1,8 +1,8 @@
-import Navbar from '@/components/navbar/navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Arvo, Montserrat } from 'next/font/google';
 import Footer from '@/components/footer/footer';
+import ScrollObserver from '@/lib/scroll-observer';
 
 const arvo = Arvo({
   weight: '400',
@@ -28,9 +28,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${montserrat.variable} ${arvo.variable}`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <ScrollObserver>
+          {children}
+          <Footer />
+        </ScrollObserver>
       </body>
     </html>
   );
