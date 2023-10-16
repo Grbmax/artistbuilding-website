@@ -3,8 +3,6 @@ import { useRef, useContext } from 'react';
 
 import { cn } from '@/lib/utils';
 import { HighlightsData } from './highlights';
-import ThreePlusGrid from '../ui/three-plus-grid';
-import TwoPlusGrid from '../ui/two-plus-grid';
 import { ScrollContext } from '@/lib/scroll-observer';
 import Overlay from './overlay';
 
@@ -15,6 +13,7 @@ const HighlightCard: React.FC<HighlightsData> = ({
   paragraph,
   video,
   className,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isLast,
 }) => {
   const refContainer = useRef<HTMLDivElement>(null);

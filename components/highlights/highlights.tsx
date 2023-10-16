@@ -1,10 +1,5 @@
 'use client';
-
-import { useContext, useRef } from 'react';
-import ThreePlusGrid from '../ui/three-plus-grid';
-import TwoPlusGrid from '../ui/two-plus-grid';
 import HighlightCard from './card';
-import { ScrollContext } from '@/lib/scroll-observer';
 
 export interface HighlightsData {
   brand: string;
