@@ -1,7 +1,25 @@
 'use client';
+
+import { useRef, useContext } from "react";
+import { ScrollContext } from "@/lib/scroll-observer";
+
 const Tagline = () => {
+  const refContainer = useRef<HTMLDivElement>(null);
+  const { scrollY } = useContext(ScrollContext);
+
+  let progress = 0;
+
+  const { current: elementContainer } = refContainer;
+
+  if (elementContainer) {
+    progress = Math.min(scrollY / elementContainer.clientHeight, 1);
+  }
+
   return (
-    <section className='flex flex-col bg-black py-20 text-3xl text-white md:text-4xl'>
+    <section 
+    className='sticky top-0 -z-10 flex flex-col bg-white py-20 text-3xl text-black md:text-4xl'
+    style={{ transform: `translateY(-${progress * 20}vh)` }}
+    >
       <div className='container mx-auto px-11'>
         <p className='mx-auto max-w-5xl text-4xl leading-tight tracking-tight lg:text-4xl'>
           <strong className='primary-text'>
