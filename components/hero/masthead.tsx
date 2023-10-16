@@ -45,9 +45,7 @@ const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
 
       <div
         className={`z-10 flex-grow-0 pt-10 transition-opacity 
-        duration-1000 md:pb-10 ${
-          imageLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
+        duration-1000 md:pb-10 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
       >
         <Building size={80} strokeWidth={0.75} color='white' />
       </div>
