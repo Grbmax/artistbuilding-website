@@ -1,5 +1,4 @@
 'use client';
-
 import HighlightCard from './card';
 
 export interface HighlightsData {
@@ -8,6 +7,8 @@ export interface HighlightsData {
   video: string;
   heading: string;
   paragraph: string;
+  className?: string;
+  isLast?: boolean;
 }
 
 export interface Highlights {
@@ -21,17 +22,24 @@ interface HighlightCardProps {
 
 const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
   return (
-    <div>
-      {highlights.data.map((highlight) => (
-        <HighlightCard
-          key={highlight.video}
-          brand={highlight.brand}
-          brandHex={highlight.brandHex}
-          heading={highlight.heading}
-          paragraph={highlight.paragraph}
-          video={highlight.video}
-        />
-      ))}
+    <div className=''>
+      {highlights.data.map((highlight: HighlightsData) => {
+        let isLast = false;
+        if (highlights.data.indexOf(highlight) === highlights.data.length - 1) {
+          isLast = true;
+        }
+        return (
+          <HighlightCard
+            key={highlight.video}
+            brand={highlight.brand}
+            brandHex={highlight.brandHex}
+            heading={highlight.heading}
+            paragraph={highlight.paragraph}
+            video={highlight.video}
+            isLast={isLast}
+          />
+        );
+      })}
     </div>
   );
 };

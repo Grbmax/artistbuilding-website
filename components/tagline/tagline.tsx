@@ -17,8 +17,8 @@ const Tagline = () => {
 
   return (
     <section 
-    className='sticky top-0 -z-10 flex flex-col bg-white py-20 text-3xl text-black md:text-4xl'
-    style={{ transform: `translateY(-${progress * 20}vh)` }}
+    className='sticky top-0 -z-10 flex flex-col bg-white py-16 text-3xl text-black md:text-4xl'
+    style={{ transform: `translateY(-${progress * 10}vh)` }}
     >
       <div className='container mx-auto px-11'>
         <p className='mx-auto max-w-5xl text-4xl leading-tight tracking-tight lg:text-4xl'>
