@@ -8,7 +8,6 @@ export interface HighlightsData {
   heading: string;
   paragraph: string;
   className?: string;
-  isLast?: boolean;
 }
 
 export interface Highlights {
@@ -24,10 +23,6 @@ const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
   return (
     <div className=''>
       {highlights.data.map((highlight: HighlightsData) => {
-        let isLast = false;
-        if (highlights.data.indexOf(highlight) === highlights.data.length - 1) {
-          isLast = true;
-        }
         return (
           <HighlightCard
             key={highlight.video}
@@ -36,7 +31,6 @@ const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
             heading={highlight.heading}
             paragraph={highlight.paragraph}
             video={highlight.video}
-            isLast={isLast}
           />
         );
       })}

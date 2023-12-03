@@ -13,8 +13,6 @@ const HighlightCard: React.FC<HighlightsData> = ({
   paragraph,
   video,
   className,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  isLast,
 }) => {
   const refContainer = useRef<HTMLDivElement>(null);
   const { scrollY } = useContext(ScrollContext);

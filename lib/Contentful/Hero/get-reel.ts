@@ -9,5 +9,10 @@ export const getReelID = async () => {
       content_type: HERO_TYPE,
     },
   });
+
+  if (reelID.items.length === 0) {
+    return null;
+  }
+
   return reelID.items[0].fields.heroReel[LOCALE].sys.id;
 };
