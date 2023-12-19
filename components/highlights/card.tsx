@@ -1,9 +1,7 @@
 'use client';
-import { useRef, useContext } from 'react';
 
 import { cn } from '@/lib/utils';
 import { HighlightsData } from './highlights';
-import { ScrollContext } from '@/lib/scroll-observer';
 import Overlay from './overlay';
 
 const HighlightCard: React.FC<HighlightsData> = ({
@@ -14,23 +12,11 @@ const HighlightCard: React.FC<HighlightsData> = ({
   video,
   className,
 }) => {
-  const refContainer = useRef<HTMLDivElement>(null);
-  const { scrollY } = useContext(ScrollContext);
-
-  let progress = 0;
-
-  const { current: elementContainer } = refContainer;
-
-  if (elementContainer) {
-    progress = Math.min(scrollY / elementContainer.clientHeight, 1);
-  }
   return (
     <div
-      id='test'
-      ref={refContainer}
-      style={{ transform: `translateY(-${progress * 5}vh)` }}
+      id='highlights'
       className={cn(
-        `sticky top-0 -z-10 flex min-h-screen w-full flex-col border-b bg-black`,
+        `flex min-h-screen w-full flex-col border-b bg-black`,
         className
       )}
     >
