@@ -1,14 +1,16 @@
 interface HeadingProps {
-  title: string;
-  description: string;
+  heading: string;
+  textSize: string;
+  font?: string;
 }
 
-const Heading: React.FC<HeadingProps> = ({ title, description }) => {
+const Heading: React.FC<HeadingProps> = ({ heading, textSize, font }) => {
   return (
-    <div>
-      <h1 className='text-3xl font-bold tracking-tight'>{title}</h1>
-      <p className='text-sm text-gray-600'>{description}</p>
-    </div>
+    <h1
+      className={`inline-block h-fit bg-gradient-to-br from-purple-500 via-[#E6E3F1] to-white bg-clip-text text-${textSize} text-transparent ${font}`}
+    >
+      {heading}
+    </h1>
   );
 };
 

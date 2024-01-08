@@ -10,9 +10,8 @@ import {
 import HighlightsComponent, {
   Highlights,
 } from '@/components/highlights/highlights';
-import WorkPage, { WorkData } from '@/components/work/work-page';
 import { notFound } from 'next/navigation';
-import Services from '@/components/services/services';
+import { WorkData } from '@/components/work/work-page';
 
 export default async function Home() {
   const reelID = await getReelID();
@@ -22,13 +21,20 @@ export default async function Home() {
   const reelURL = await getAsset(reelID);
   const highlights = (await getHighlights()) as Highlights;
   const work = (await getWork()) as unknown as WorkData[];
+
+  console.log('work', work);
+  console.log('highlights', highlights);
+
   return (
-    <div>
+    <div className='w-full'>
       <MastHead reelURL={reelURL} />
       <Tagline />
       {highlights ? <HighlightsComponent highlights={highlights} /> : null}
+      <Tagline />
+      <Tagline />
+      {/* 
       {work ? <WorkPage work={work} /> : null}
-      <Services />
+    <Services /> */}
     </div>
   );
 }

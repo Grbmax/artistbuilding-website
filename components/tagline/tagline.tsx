@@ -2,7 +2,10 @@
 
 const Tagline = () => {
   return (
-    <section className='sticky top-0 -z-10 flex flex-col bg-white py-16 text-3xl text-black md:text-4xl'>
+    <section
+      id='projects'
+      className='sticky top-0 -z-10 flex flex-col bg-white py-16 text-3xl text-black md:text-4xl'
+    >
       <div className='container mx-auto px-11'>
         <p className='mx-auto max-w-5xl text-4xl leading-tight tracking-tight lg:text-4xl'>
           <strong className='primary-text'>

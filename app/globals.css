@@ -6,17 +6,28 @@ html,
 body,
 :root{
   height: 100%;
-  color: #cfcfcf;
+  color: black;
   font-family: var(--font-montserrat);
 }
 
-.font-heading {
+.inter {
   font-family: var(--font-arvo);
+}
+
+.sherika {
+  font-family: var(--font-sherika);
 }
 
 .primary-color {
   background-color: #7765c8;
   color: black;
+}
+
+.heading {
+  background: linear-gradient(90deg, #A67FB9 0%, #E6E3F1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .primary-text {
@@ -40,6 +51,18 @@ body,
 .accent-text {
   color: #252565;
 }
+
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Vertical layout on smaller screens */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100vh; /* Full height */
+  }
+}
+
 
 @keyframes plus-spin {
   0% {
