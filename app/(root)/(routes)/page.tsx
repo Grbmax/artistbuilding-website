@@ -23,8 +23,7 @@ export default async function Home() {
       <article>
         <MastHead reelURL={reelURL} />
         <WhatWeDo />
-        <section className='min-h-screen'>1</section>
-        <section>2</section>
+        <section className='min-h-screen bg-black text-white'>1</section>
         {/* {highlights ? <HighlightsComponent highlights={highlights} /> : null} */}
         {/* 
       {work ? <WorkPage work={work} /> : null}

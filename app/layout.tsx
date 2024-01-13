@@ -20,6 +20,11 @@ const sherika = localFont({
   display: 'swap',
   variable: '--font-sherika',
 });
+const akira = localFont({
+  src: '/static-fonts/AkiraExpanded.otf',
+  display: 'swap',
+  variable: '--font-akira',
+});
 
 export const metadata: Metadata = {
   title: 'The ArtistBuilding',
@@ -34,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${montserrat.variable} ${inter.variable} ${sherika.variable}`}
+        className={`${montserrat.variable} ${inter.variable} ${sherika.variable} ${akira.variable}`}
       >
         <ScrollObserver>
           <Navbar />

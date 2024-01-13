@@ -18,6 +18,10 @@ body,
   font-family: var(--font-sherika);
 }
 
+.akira {
+  font-family: var(--font-akira);
+}
+
 .primary-color {
   background-color: #7765c8;
   color: black;
