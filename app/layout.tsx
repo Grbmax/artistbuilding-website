@@ -38,7 +38,7 @@ export default function RootLayout({
       >
         <ScrollObserver>
           <Navbar />
-          {children}
+          <main>{children}</main>
           {/* <Footer /> */}
         </ScrollObserver>
       </body>

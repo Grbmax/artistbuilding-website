@@ -1,17 +1,9 @@
+import MastHead from '@/components/hero/masthead';
+import WhatWeDo from '@/components/whatwedo/WhatWeDo';
 import { getAsset } from '@/lib/Contentful/Asset/get-asset';
 import { getReelID } from '@/lib/Contentful/Hero/get-reel';
-
-import MastHead from '@/components/hero/masthead';
-import Tagline from '@/components/tagline/tagline';
-import {
-  getHighlights,
-  getWork,
-} from '@/lib/Contentful/Highlights/get-highlights';
-import HighlightsComponent, {
-  Highlights,
-} from '@/components/highlights/highlights';
 import { notFound } from 'next/navigation';
-import { WorkData } from '@/components/work/work-page';
+import React from 'react';
 
 export default async function Home() {
   const reelID = await getReelID();
@@ -19,22 +11,25 @@ export default async function Home() {
     return notFound();
   }
   const reelURL = await getAsset(reelID);
-  const highlights = (await getHighlights()) as Highlights;
-  const work = (await getWork()) as unknown as WorkData[];
+  // const highlights = (await getHighlights()) as Highlights;
+  // const work = (await getWork()) as unknown as WorkData[];
 
-  console.log('work', work);
-  console.log('highlights', highlights);
+  // console.log('work', work);
+  // console.log('highlights', highlights);
 
   return (
-    <div className='w-full'>
-      <MastHead reelURL={reelURL} />
-      <Tagline />
-      {highlights ? <HighlightsComponent highlights={highlights} /> : null}
-      <Tagline />
-      <Tagline />
-      {/* 
+    <React.Fragment>
+      <div className='absolute left-0 top-0'>Gaurav</div>
+      <article>
+        <MastHead reelURL={reelURL} />
+        <WhatWeDo />
+        <section className='min-h-screen'>1</section>
+        <section>2</section>
+        {/* {highlights ? <HighlightsComponent highlights={highlights} /> : null} */}
+        {/* 
       {work ? <WorkPage work={work} /> : null}
     <Services /> */}
-    </div>
+      </article>
+    </React.Fragment>
   );
 }
