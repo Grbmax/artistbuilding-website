@@ -1,11 +1,5 @@
-import Container from '@/components/ui/cross-container';
-
 const AboutPage = () => {
-  return (
-    <Container>
-      <h1>About Us</h1>
-    </Container>
-  );
+  return <h1>About Us</h1>;
 };
 
 export default AboutPage;

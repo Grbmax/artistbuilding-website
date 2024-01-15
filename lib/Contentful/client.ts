@@ -12,6 +12,7 @@ export const LOCALE = "en-US";
 export const ENVIORNMENT_ID = "master";
 export const HERO_TYPE = "homePage"
 export const HIGHLIGHTS_TYPE = "workHighlights"
+export const WORKS_TYPE = "allWork"
 
 //Create client
 export const cmaClient = createClient(

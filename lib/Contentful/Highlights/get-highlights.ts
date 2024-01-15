@@ -1,5 +1,11 @@
 import { getAsset } from '../Asset/get-asset';
-import { cmaClient, ENVIORNMENT_ID, HIGHLIGHTS_TYPE, LOCALE } from '../client';
+import {
+  cmaClient,
+  ENVIORNMENT_ID,
+  HIGHLIGHTS_TYPE,
+  LOCALE,
+  WORKS_TYPE,
+} from '../client';
 import { CF_SPACE_ID } from '../cma-config';
 
 export const getHighlights = async () => {
@@ -36,4 +42,35 @@ export const getHighlights = async () => {
   );
 
   return { data: data.filter(Boolean), total: highlights.total };
+};
+
+export const getWork = async () => {
+  const work = await cmaClient.entry.getMany({
+    spaceId: CF_SPACE_ID,
+    environmentId: ENVIORNMENT_ID,
+    query: {
+      content_type: WORKS_TYPE,
+    },
+  });
+
+  //Format the data
+  const data = await Promise.all(
+    work.items.map(async (item) => {
+      try {
+        return {
+          id: item.sys.id,
+          title: item.fields.title[LOCALE],
+          subtitle: item.fields.subtitle[LOCALE],
+          videoId: item.fields.videoId[LOCALE],
+        };
+      } catch (error) {
+        console.error(
+          `Failed to retrieve asset URL for item ${item.sys.id}: ${error}`
+        );
+        return null;
+      }
+    })
+  );
+
+  return data;
 };

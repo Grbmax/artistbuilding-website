@@ -6,17 +6,32 @@ html,
 body,
 :root{
   height: 100%;
-  color: #cfcfcf;
+  color: black;
   font-family: var(--font-montserrat);
 }
 
-.font-heading {
+.inter {
   font-family: var(--font-arvo);
+}
+
+.sherika {
+  font-family: var(--font-sherika);
+}
+
+.akira {
+  font-family: var(--font-akira);
 }
 
 .primary-color {
   background-color: #7765c8;
   color: black;
+}
+
+.heading {
+  background: linear-gradient(90deg, #A67FB9 0%, #E6E3F1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .primary-text {
@@ -41,6 +56,18 @@ body,
   color: #252565;
 }
 
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Vertical layout on smaller screens */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100vh; /* Full height */
+  }
+}
+
+
 @keyframes plus-spin {
   0% {
     transform: rotate(0deg);
@@ -55,3 +82,53 @@ body,
 .hover\:animation-spin:hover {
   animation: plus-spin 0.5s linear forwards;
 }
+
+@media (min-width: 768px) {
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+/*  note vh and vw switched  */
+  width: 100vh; 
+  height: 100vw;
+/*    */
+  transform-origin: top left;
+  transform: rotate(-90deg) translateX(-100vh);
+  overflow-x: hidden;
+  overflow-y: scroll;
+/*   scroll-snap-type: y mandatory; */
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  transform-origin: top left;
+  transform: rotate(90deg) translateY(-100vh);
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+/*  backface visibility keeps font from looking weird  */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+}
+
+
