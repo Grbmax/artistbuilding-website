@@ -1,7 +1,11 @@
 import MastHead from '@/components/hero/masthead';
+import HighlightsComponent, {
+  Highlights,
+} from '@/components/highlights/highlights';
 import WhatWeDo from '@/components/whatwedo/WhatWeDo';
 import { getAsset } from '@/lib/Contentful/Asset/get-asset';
 import { getReelID } from '@/lib/Contentful/Hero/get-reel';
+import { getHighlights } from '@/lib/Contentful/Highlights/get-highlights';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
@@ -11,7 +15,7 @@ export default async function Home() {
     return notFound();
   }
   const reelURL = await getAsset(reelID);
-  // const highlights = (await getHighlights()) as Highlights;
+  const highlights = (await getHighlights()) as Highlights;
   // const work = (await getWork()) as unknown as WorkData[];
 
   // console.log('work', work);
@@ -23,8 +27,7 @@ export default async function Home() {
       <article>
         <MastHead reelURL={reelURL} />
         <WhatWeDo />
-        <section className='min-h-screen bg-black text-white'>1</section>
-        {/* {highlights ? <HighlightsComponent highlights={highlights} /> : null} */}
+        {highlights ? <HighlightsComponent highlights={highlights} /> : null}
         {/* 
       {work ? <WorkPage work={work} /> : null}
     <Services /> */}

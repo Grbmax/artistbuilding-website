@@ -2,7 +2,6 @@
 
 import { cn } from '@/lib/utils';
 import { HighlightsData } from './highlights';
-import Overlay from './overlay';
 
 const HighlightCard: React.FC<HighlightsData> = ({
   brand,
@@ -20,7 +19,6 @@ const HighlightCard: React.FC<HighlightsData> = ({
         className
       )}
     >
-      <Overlay />
       <div className='flex min-h-screen w-full flex-col  text-white md:flex md:flex-row md:justify-evenly'>
         <div className='flex w-full flex-1 flex-col items-center justify-center space-y-2 px-6 md:m-0 md:ml-14 md:min-h-screen md:items-center md:px-0'>
           <video

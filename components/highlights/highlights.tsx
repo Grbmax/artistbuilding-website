@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import HighlightCard from './card';
 
 export interface HighlightsData {
@@ -21,20 +22,21 @@ interface HighlightCardProps {
 
 const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
   return (
-    <div className=''>
+    <React.Fragment>
       {highlights.data.map((highlight: HighlightsData) => {
         return (
-          <HighlightCard
-            key={highlight.video}
-            brand={highlight.brand}
-            brandHex={highlight.brandHex}
-            heading={highlight.heading}
-            paragraph={highlight.paragraph}
-            video={highlight.video}
-          />
+          <section key={highlight.video}>
+            <HighlightCard
+              brand={highlight.brand}
+              brandHex={highlight.brandHex}
+              heading={highlight.heading}
+              paragraph={highlight.paragraph}
+              video={highlight.video}
+            />
+          </section>
         );
       })}
-    </div>
+    </React.Fragment>
   );
 };
 

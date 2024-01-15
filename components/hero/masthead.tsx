@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import ArrowRight from '../icons/arrowRight';
 import ArrowRightLong from '../icons/arrowRightLong';
 import Button from '../ui/button';
@@ -44,9 +45,14 @@ const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
                 font='sherika'
               />
               <Paragraph paragraph={paragraph} textSize='2xl' font='sherika' />
-              <div>
-                <Button onClick={() => alert()}>Book an appointment</Button>
-              </div>
+              <Link
+                href={
+                  'https://calendly.com/artistbuildingstudio/30min?month=2024-01'
+                }
+                aria-label='Book an appointment'
+              >
+                <Button>Book an appointment</Button>
+              </Link>
             </div>
             <div className='mt-16 flex w-full flex-col pr-6'>
               <div className='flex flex-col'>
