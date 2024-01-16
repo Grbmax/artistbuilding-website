@@ -19,7 +19,7 @@ export default async function Home() {
   // const work = (await getWork()) as unknown as WorkData[];
 
   // console.log('work', work);
-  // console.log('highlights', highlights);
+  console.log('highlights', highlights);
 
   return (
     <React.Fragment>
