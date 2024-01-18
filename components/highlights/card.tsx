@@ -30,7 +30,7 @@ const HighlightCard: React.FC<HighlightsData> = ({
           >
             <source src={video}></source>
           </video>
-          <h1 className={cn(`text-x z-10 flex w-full justify-start`, brandHex)}>
+          <h1 className={cn(`text-3xl z-10 flex w-full justify-start`, brandHex)}>
             {brand}
           </h1>
         </div>

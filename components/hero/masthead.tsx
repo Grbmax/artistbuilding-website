@@ -32,7 +32,7 @@ const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
           <source src={reelURL}></source>
         </video>
         {/* Overlay */}
-        <div className='absolute h-full bg-none'>
+        <div className='absolute h-full bg-gradient-to-r from-transparent via-transparent to-black'>
           {/* Content */}
           <div
             className='flex h-full w-full flex-col items-start justify-end px-5 md:pb-[49px] md:pl-24 md:pr-44'

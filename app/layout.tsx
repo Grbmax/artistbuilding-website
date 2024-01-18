@@ -9,21 +9,25 @@ const inter = Inter({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-inter',
+  preload: true,
 });
 const montserrat = Montserrat({
   weight: '500',
   subsets: ['latin'],
   variable: '--font-montserrat',
+  preload: true,
 });
 const sherika = localFont({
   src: '/static-fonts/Sherika-Regular.ttf',
   display: 'swap',
   variable: '--font-sherika',
+  preload: true,
 });
 const akira = localFont({
   src: '/static-fonts/AkiraExpanded.otf',
   display: 'swap',
   variable: '--font-akira',
+  preload: true,
 });
 
 export const metadata: Metadata = {
