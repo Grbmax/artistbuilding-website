@@ -1,12 +1,21 @@
+import { cn } from '@/lib/utils';
 interface HeadingProps {
   paragraph: string;
   textSize: string;
   font?: string;
+  className?: string;
 }
 
-const Paragraph: React.FC<HeadingProps> = ({ paragraph, textSize, font }) => {
+const Paragraph: React.FC<HeadingProps> = ({
+  paragraph,
+  textSize,
+  font,
+  className,
+}) => {
   return (
-    <p className={`white text-${textSize} text-white ${font}`}>{paragraph}</p>
+    <p className={(cn(`white text-${textSize} text-white ${font}`), className)}>
+      {paragraph}
+    </p>
   );
 };
 

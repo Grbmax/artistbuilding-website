@@ -2,6 +2,7 @@ import MastHead from '@/components/hero/masthead';
 import HighlightsComponent, {
   Highlights,
 } from '@/components/highlights/highlights';
+import Services from '@/components/services/services';
 import WhatWeDo from '@/components/whatwedo/WhatWeDo';
 import { getAsset } from '@/lib/Contentful/Asset/get-asset';
 import { getReelID } from '@/lib/Contentful/Hero/get-reel';
@@ -23,14 +24,14 @@ export default async function Home() {
 
   return (
     <React.Fragment>
-      <div className='absolute left-0 top-0'>Gaurav</div>
       <article>
         <MastHead reelURL={reelURL} />
         <WhatWeDo />
         {highlights ? <HighlightsComponent highlights={highlights} /> : null}
         {/* 
-      {work ? <WorkPage work={work} /> : null}
-    <Services /> */}
+          {work ? <WorkPage work={work} /> : null}
+          */}
+        <Services />
       </article>
     </React.Fragment>
   );

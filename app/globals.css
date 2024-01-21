@@ -22,6 +22,10 @@ body,
   font-family: var(--font-akira);
 }
 
+.europa {
+  font-family: var(--font-europa);
+}
+
 .primary-color {
   background-color: #7765c8;
   color: black;
@@ -128,6 +132,11 @@ section {
 /*  backface visibility keeps font from looking weird  */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+#whatwedo {
+  max-width: fit-content;
+  justify-content: flex-start;
 }
 }
 

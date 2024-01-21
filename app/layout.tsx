@@ -29,6 +29,12 @@ const akira = localFont({
   variable: '--font-akira',
   preload: true,
 });
+const europa = localFont({
+  src: '/static-fonts/EuropaGroNr2SHOP.otf',
+  display: 'swap',
+  variable: '--font-europa',
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: 'The ArtistBuilding',
@@ -43,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${montserrat.variable} ${inter.variable} ${sherika.variable} ${akira.variable}`}
+        className={`${montserrat.variable} ${inter.variable} ${sherika.variable} ${akira.variable} ${europa.variable}`}
       >
         <ScrollObserver>
           <Navbar />
