@@ -23,9 +23,9 @@ interface HighlightCardProps {
 const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
   return (
     <React.Fragment>
-      {highlights.data.map((highlight: HighlightsData) => {
+      {highlights.data.map((highlight: HighlightsData, index) => {
         return (
-          <section key={highlight.video}>
+          <section id={`highlight-${index}`} key={highlight.video}>
             <HighlightCard
               brand={highlight.brand}
               brandHex={highlight.brandHex}

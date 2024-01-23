@@ -10,18 +10,14 @@ import Paragraph from '../ui/paragraph';
 interface HeroVideoProps {
   reelURL: string;
 }
+const paragraph = `publishing and graphic design, Lorem ipsum is a placeholder text
+commonly used to demonstrate the visual form of a document or a
+typeface without relying on meaningful content.`;
 
 const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
-  const paragraph = `publishing and graphic design, Lorem ipsum is a placeholder text
-  commonly used to demonstrate the visual form of a document or a
-  typeface without relying on meaningful content.`;
-
   return (
-    <section>
-      <div
-        id='home'
-        className='flex min-h-screen w-full min-w-full flex-col items-center justify-center bg-[a2a2a4]'
-      >
+    <section id='home'>
+      <div className='flex min-h-screen w-full min-w-full flex-col items-center justify-center bg-[a2a2a4] text-white'>
         <video
           autoPlay
           loop
@@ -56,11 +52,11 @@ const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
             </div>
             <div className='mt-16 flex w-full flex-col pr-6'>
               <div className='flex flex-col'>
-                <div className='flex items-center gap-8 pr-4'>
+                <div className='hidden items-center gap-8 pr-4 md:flex'>
                   <ArrowRight />
                   <p className='text-white'>SCROLL</p>
                 </div>
-                <div className='mt-2 flex'>
+                <div className='mt-2 hidden md:flex'>
                   <ArrowRightLong />
                 </div>
               </div>

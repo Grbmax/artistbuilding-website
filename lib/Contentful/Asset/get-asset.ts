@@ -7,9 +7,7 @@ export const getAsset = async (id: string) => {
     environmentId: ENVIORNMENT_ID,
     assetId: id,
   });
-  
-  console.log(asset);
-  
+
   if (!asset) {
     throw new Error(`Asset with id ${id} not found`);
   }

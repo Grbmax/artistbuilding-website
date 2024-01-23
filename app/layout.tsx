@@ -53,7 +53,9 @@ export default function RootLayout({
       >
         <ScrollObserver>
           <Navbar />
-          <main>{children}</main>
+          <main id='scroll-container' className='overflow-hidden'>
+            {children}
+          </main>
           {/* <Footer /> */}
         </ScrollObserver>
       </body>

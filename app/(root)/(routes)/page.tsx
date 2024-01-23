@@ -1,3 +1,5 @@
+import AboutUs from '@/components/aboutus/aboutus';
+import Contact from '@/components/contact/contact';
 import MastHead from '@/components/hero/masthead';
 import HighlightsComponent, {
   Highlights,
@@ -17,10 +19,6 @@ export default async function Home() {
   }
   const reelURL = await getAsset(reelID);
   const highlights = (await getHighlights()) as Highlights;
-  // const work = (await getWork()) as unknown as WorkData[];
-
-  // console.log('work', work);
-  console.log('highlights', highlights);
 
   return (
     <React.Fragment>
@@ -28,10 +26,9 @@ export default async function Home() {
         <MastHead reelURL={reelURL} />
         <WhatWeDo />
         {highlights ? <HighlightsComponent highlights={highlights} /> : null}
-        {/* 
-          {work ? <WorkPage work={work} /> : null}
-          */}
         <Services />
+        <AboutUs />
+        <Contact />
       </article>
     </React.Fragment>
   );
