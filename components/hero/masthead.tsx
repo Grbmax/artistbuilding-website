@@ -1,18 +1,14 @@
 'use client';
 
-import Link from 'next/link';
 import ArrowRight from '../icons/arrowRight';
 import ArrowRightLong from '../icons/arrowRightLong';
-import Button from '../ui/button';
 import Heading from '../ui/heading';
 import Paragraph from '../ui/paragraph';
 
 interface HeroVideoProps {
   reelURL: string;
 }
-const paragraph = `publishing and graphic design, Lorem ipsum is a placeholder text
-commonly used to demonstrate the visual form of a document or a
-typeface without relying on meaningful content.`;
+const paragraph = `Explore boundless creativity, where we turn your ideas into reality through streamlined processes, expert craftsmanship and business acumen. Witness a uniquely successful experience like never before`;
 
 const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
   return (
@@ -36,19 +32,11 @@ const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
           >
             <div className='flex flex-col gap-4  md:pr-52'>
               <Heading
-                heading='KEEPTURQUOISESE'
+                heading='Your Portal To Visual Wonders'
                 textSize='3xl'
                 font='sherika'
               />
               <Paragraph paragraph={paragraph} textSize='2xl' font='sherika' />
-              <Link
-                href={
-                  'https://calendly.com/artistbuildingstudio/30min?month=2024-01'
-                }
-                aria-label='Book an appointment'
-              >
-                <Button>Book an appointment</Button>
-              </Link>
             </div>
             <div className='mt-16 flex w-full flex-col pr-6'>
               <div className='flex flex-col'>

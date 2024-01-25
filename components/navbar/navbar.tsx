@@ -17,11 +17,11 @@ const Navbar = () => {
       label: 'Home',
       active: activeSection === 'home',
     },
-    {
-      href: '#what-we-do',
-      label: 'What We Do',
-      active: activeSection === 'what-we-do',
-    },
+    // {
+    //   href: '#what-we-do',
+    //   label: 'What We Do',
+    //   active: activeSection === 'what-we-do',
+    // },
     {
       href: '#highlights',
       label: 'Projects',
@@ -36,6 +36,11 @@ const Navbar = () => {
       href: '#about-us',
       label: 'About Us',
       active: activeSection === 'about-us',
+    },
+    {
+      href: '#clients',
+      label: 'Clientele',
+      active: activeSection === 'clients',
     },
     {
       href: '#contact',
@@ -60,7 +65,7 @@ const Navbar = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4500);
+    }, 2500);
   }, []);
 
   // Disable scrolling when loading

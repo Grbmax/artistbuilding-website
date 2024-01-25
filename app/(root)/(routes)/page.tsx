@@ -1,6 +1,7 @@
 import AboutUs from '@/components/aboutus/aboutus';
 import Contact from '@/components/contact/contact';
 import MastHead from '@/components/hero/masthead';
+import Clientele from '@/components/clientele/clientele';
 import HighlightsComponent, {
   Highlights,
 } from '@/components/highlights/highlights';
@@ -28,6 +29,7 @@ export default async function Home() {
         {highlights ? <HighlightsComponent highlights={highlights} /> : null}
         <Services />
         <AboutUs />
+        <Clientele />
         <Contact />
       </article>
     </React.Fragment>

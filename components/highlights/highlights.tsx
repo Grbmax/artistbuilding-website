@@ -25,7 +25,12 @@ const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
     <React.Fragment>
       {highlights.data.map((highlight: HighlightsData, index) => {
         return (
-          <section id={`highlight-${index}`} key={highlight.video}>
+          <section
+            className='bg-black'
+            style={{ display: 'unset' }}
+            id={`highlight-${index}`}
+            key={highlight.video}
+          >
             <HighlightCard
               brand={highlight.brand}
               brandHex={highlight.brandHex}
