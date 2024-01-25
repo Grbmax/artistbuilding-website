@@ -27,14 +27,12 @@ const Clientele = () => {
               textSize='xl'
               className='europa text-4xl font-semibold md:text-4xl'
             />
-            {paragraph && paragraph.length > 0 && (
               <Paragraph
                 paragraph={paragraph}
                 textSize='xs'
                 font='sherika'
                 className='text-left text-sm md:text-xl'
-              />
-            )}
+              />  
           </div>
         </div>
         <div className='flex h-full w-full flex-col items-end justify-between pt-[7.5rem]'>
