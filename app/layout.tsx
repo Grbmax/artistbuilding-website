@@ -9,21 +9,31 @@ const inter = Inter({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-inter',
+  preload: true,
 });
 const montserrat = Montserrat({
   weight: '500',
   subsets: ['latin'],
   variable: '--font-montserrat',
+  preload: true,
 });
 const sherika = localFont({
   src: '/static-fonts/Sherika-Regular.ttf',
   display: 'swap',
   variable: '--font-sherika',
+  preload: true,
 });
 const akira = localFont({
   src: '/static-fonts/AkiraExpanded.otf',
   display: 'swap',
   variable: '--font-akira',
+  preload: true,
+});
+const europa = localFont({
+  src: '/static-fonts/EuropaGroNr2SHOP.otf',
+  display: 'swap',
+  variable: '--font-europa',
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -39,11 +49,13 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${montserrat.variable} ${inter.variable} ${sherika.variable} ${akira.variable}`}
+        className={`${montserrat.variable} ${inter.variable} ${sherika.variable} ${akira.variable} ${europa.variable}`}
       >
         <ScrollObserver>
           <Navbar />
-          <main>{children}</main>
+          <main id='scroll-container' className='overflow-hidden'>
+            {children}
+          </main>
           {/* <Footer /> */}
         </ScrollObserver>
       </body>

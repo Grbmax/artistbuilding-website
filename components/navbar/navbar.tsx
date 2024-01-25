@@ -1,41 +1,93 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import ColumnLogo from '../icons/column-logo';
 import ArtistBuilding from '../icons/artistbuilding';
+import { ScrollContext } from '@/lib/scroll-observer';
+import { useContext, useEffect, useState } from 'react';
+import Link from 'next/link';
+import SplashScreen from '../splash-screen/splashScreen';
 
 const Navbar = () => {
-  const pathname = usePathname();
+  const { activeSection } = useContext(ScrollContext);
+  const [loading, setLoading] = useState(true);
 
   const routes = [
     {
-      href: '/',
+      href: '#home',
       label: 'Home',
-      active: pathname === '/',
+      active: activeSection === 'home',
     },
+    // {
+    //   href: '#what-we-do',
+    //   label: 'What We Do',
+    //   active: activeSection === 'what-we-do',
+    // },
     {
-      href: '/whatwedo',
-      label: 'What We Do',
-      active: pathname === '/whatwedo',
-    },
-    {
-      href: '/projects',
+      href: '#highlights',
       label: 'Projects',
-      active: pathname === '/projects',
+      active: activeSection.startsWith('highlight'),
     },
     {
-      href: '/services',
+      href: '#services',
       label: 'Services',
-      active: pathname === '/services',
+      active: activeSection === 'services',
+    },
+    {
+      href: '#about-us',
+      label: 'About Us',
+      active: activeSection === 'about-us',
+    },
+    {
+      href: '#clients',
+      label: 'Clientele',
+      active: activeSection === 'clients',
+    },
+    {
+      href: '#contact',
+      label: 'Contact',
+      active: activeSection === 'contact',
     },
   ];
 
-  return (
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const sectionId = href.replace('#', '');
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Set loading false after 5 seconds
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+  }, []);
+
+  // Disable scrolling when loading
+  useEffect(() => {
+    const scrollContainer = document.getElementById(
+      'scroll-container'
+    ) as HTMLElement;
+    if (!scrollContainer) return;
+    if (loading) {
+      scrollContainer.style.overflow = 'hidden';
+    } else {
+      scrollContainer.style.overflow = 'auto';
+    }
+  }, [loading]);
+
+  return loading ? (
+    <SplashScreen />
+  ) : (
     <nav
-      className={`text-bold z-50 absolute flex items-center justify-between h-fit w-full space-x-2 bg-transparent px-8 py-4 text-2xl md:space-x-4 lg:space-x-6`}
+      className={`text-bold absolute z-10 hidden h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl md:flex md:space-x-4 lg:space-x-6`}
     >
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center gap-[10px]'>
         <ArtistBuilding />
         <ColumnLogo />
       </div>
@@ -44,10 +96,9 @@ const Navbar = () => {
           <Link
             key={route.href}
             href={route.href}
-            rel='prefetch'
-            className={`transition-colors ${
-              route.active ? 'primary-text' : 'secondary-text'
-            }`}
+            passHref
+            onClick={(e) => handleClick(e, route.href)}
+            className={`${route.active ? 'primary-text' : 'secondary-text'}`}
           >
             {route.label}
           </Link>

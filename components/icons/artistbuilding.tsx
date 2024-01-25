@@ -10,7 +10,7 @@ const ArtistBuilding: React.FC<IconProps> = ({ className, height, width }) => {
       width={width || '31'}
       height={height || '41'}
       className={className}
-      viewBox='0 0 31 41'
+      viewBox={`0 0 ${width} ${height}`}
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >

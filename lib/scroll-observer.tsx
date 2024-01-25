@@ -1,34 +1,50 @@
 'use client';
-import React, { useState, useEffect, useCallback } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
-interface ScrollValue {
-    scrollY: number;
+interface ActiveSectionValue {
+  activeSection: string;
 }
 
 interface ScrollObserverProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export const ScrollContext = React.createContext<ScrollValue>({ scrollY: 0 });
-
+export const ScrollContext = createContext<ActiveSectionValue>({
+  activeSection: '',
+});
 
 const ScrollObserver: React.FC<ScrollObserverProps> = ({ children }) => {
-    const [scrollY, setScrollY] = useState(0);
-    const handleScroll = useCallback(() => {
-        setScrollY(window.scrollY);
-    }, []);
+  const [activeSection, setActiveSection] = useState('');
 
-    useEffect(() => {
-        document.addEventListener('scroll', handleScroll, { passive: true });
-        return () => document.removeEventListener('scroll', handleScroll);
-    }, [handleScroll]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.7 }
+    );
 
-    return (
-        <ScrollContext.Provider value={{ scrollY }}>
-            {children}
-        </ScrollContext.Provider>
-    )
-}
- 
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  return (
+    <ScrollContext.Provider value={{ activeSection }}>
+      {children}
+    </ScrollContext.Provider>
+  );
+};
+
 export default ScrollObserver;
- 

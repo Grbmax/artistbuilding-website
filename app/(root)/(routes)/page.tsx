@@ -1,7 +1,11 @@
+import AboutUs from '@/components/aboutus/aboutus';
+import Contact from '@/components/contact/contact';
 import MastHead from '@/components/hero/masthead';
+import Clientele from '@/components/clientele/clientele';
 import HighlightsComponent, {
   Highlights,
 } from '@/components/highlights/highlights';
+import Services from '@/components/services/services';
 import WhatWeDo from '@/components/whatwedo/WhatWeDo';
 import { getAsset } from '@/lib/Contentful/Asset/get-asset';
 import { getReelID } from '@/lib/Contentful/Hero/get-reel';
@@ -16,21 +20,17 @@ export default async function Home() {
   }
   const reelURL = await getAsset(reelID);
   const highlights = (await getHighlights()) as Highlights;
-  // const work = (await getWork()) as unknown as WorkData[];
-
-  // console.log('work', work);
-  // console.log('highlights', highlights);
 
   return (
     <React.Fragment>
-      <div className='absolute left-0 top-0'>Gaurav</div>
       <article>
         <MastHead reelURL={reelURL} />
         <WhatWeDo />
         {highlights ? <HighlightsComponent highlights={highlights} /> : null}
-        {/* 
-      {work ? <WorkPage work={work} /> : null}
-    <Services /> */}
+        <Services />
+        <AboutUs />
+        <Clientele />
+        <Contact />
       </article>
     </React.Fragment>
   );
