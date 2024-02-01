@@ -27,18 +27,10 @@ const Clientele = () => {
               textSize='xl'
               className='europa text-4xl font-semibold md:text-4xl'
             />
-            {/* {paragraph && paragraph.length > 0 && (
-              <Paragraph
-                paragraph={paragraph}
-                textSize='xs'
-                font='sherika'
-                className='text-left text-sm md:text-xl'
-              />
-            )} */}
           </div>
         </div>
-        <div className='flex h-full w-full flex-col items-end justify-between pt-[7.5rem]'>
-          <div className='flex h-[40px] w-full items-center justify-between'>
+        <div className='flex h-full w-full flex-col items-end justify-between gap-2 pt-5 md:gap-0 md:pt-[7.5rem]'>
+          <div className='flex h-[50px] w-full items-center justify-between'>
             <div className='relative flex h-full w-[70px]'>
               <Image
                 src='/client-logos/1.png'
@@ -67,7 +59,7 @@ const Clientele = () => {
               />
             </div>
           </div>
-          <div className='flex h-[40px] w-full items-center justify-between'>
+          <div className='flex h-[50px] w-full items-center justify-between'>
             <div className='relative flex h-full w-[70px]'>
               <Image
                 src='/client-logos/4.png'
@@ -96,7 +88,7 @@ const Clientele = () => {
               />
             </div>
           </div>
-          <div className='flex h-[40px] w-full items-center justify-between'>
+          <div className='flex h-[50px] w-full items-center justify-between'>
             <div className='relative flex h-full w-[70px]'>
               <Image
                 src='/client-logos/7.png'
@@ -125,7 +117,7 @@ const Clientele = () => {
               />
             </div>
           </div>
-          <div className='flex h-[40px] w-full items-center justify-between'>
+          <div className='flex h-[50px] w-full items-center justify-between'>
             <div className='relative flex h-full w-[70px]'>
               <Image
                 src='/client-logos/10.png'

@@ -53,7 +53,7 @@ const Services = () => {
             }
             textSize='lg'
             font='sherika'
-            className='text-left text-sm md:text-sm'
+            className='text-left text-sm font-bold md:text-sm'
           />
           <Link
             href={
@@ -67,7 +67,7 @@ const Services = () => {
           </Link>
         </div>
       </div>
-      <div className='z-10 flex h-min w-full px-6 pt-3 md:px-0 md:pt-0'>
+      <div className='z-10 flex h-min w-full px-6 pt-6 md:px-0 md:pt-0'>
         <div className='flex w-full items-center gap-4 md:gap-24'>
           <div className='flex w-full flex-col gap-5'>
             <ServicesCard heading='COMPOSITING' />
