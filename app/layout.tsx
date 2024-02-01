@@ -4,6 +4,8 @@ import { Inter, Montserrat } from 'next/font/google';
 import ScrollObserver from '@/lib/scroll-observer';
 import Navbar from '@/components/navbar/navbar';
 import localFont from 'next/font/local';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   weight: '400',
@@ -55,6 +57,8 @@ export default function RootLayout({
           <Navbar />
           <main id='scroll-container' className='overflow-hidden'>
             {children}
+            <SpeedInsights />
+            <Analytics />
           </main>
           {/* <Footer /> */}
         </ScrollObserver>
