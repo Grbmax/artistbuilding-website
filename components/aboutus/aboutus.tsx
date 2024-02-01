@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import bgImage from '@/public/website-assets/1.png';
+import bgImage from '@/public/website-assets/artist-text.png';
 import Heading from '../ui/heading';
 import Paragraph from '../ui/paragraph';
 
@@ -15,15 +15,15 @@ const AboutUs = () => {
     >
       <Image
         src={bgImage}
-        width={600}
-        height={500}
+        width={1300}
+        height={800}
         quality={100}
         className='absolute bottom-0 right-0 z-0'
         alt='bg-image'
       />
       <div className='z-10 flex w-full flex-col items-start justify-between px-6 md:flex-row md:px-36'>
-        <div className='z-10 flex w-full md:w-3/5'>
-          <div className='flex h-32 w-full flex-col gap-3'>
+        <div className='z-10 flex h-full w-full md:w-3/5'>
+          <div className='flex h-full w-full flex-col gap-3'>
             <Heading
               heading={'ABOUT US'}
               textSize='xl'
@@ -37,7 +37,7 @@ const AboutUs = () => {
             />
           </div>
         </div>
-        <div className='relative flex h-96 w-full md:w-1/3'>
+        <div className='relative flex h-[450px] w-full md:w-1/3'>
           <Image
             src='/website-assets/about.png'
             fill

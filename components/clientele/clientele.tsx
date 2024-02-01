@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import bgImage from '@/public/website-assets/2.png';
+import bgImage from '@/public/website-assets/building-text.png';
 import Heading from '../ui/heading';
 // import Paragraph from '../ui/paragraph';
 
@@ -13,7 +13,7 @@ const Clientele = () => {
     >
       <Image
         src={bgImage}
-        width={600}
+        width={1300}
         height={500}
         quality={100}
         className='absolute bottom-0 left-0 z-0'

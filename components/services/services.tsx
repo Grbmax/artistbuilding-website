@@ -23,7 +23,7 @@ const Services = () => {
         width={600}
         height={500}
         quality={100}
-        className='absolute right-0 top-0 -z-10'
+        className='absolute right-0 top-0 z-10'
         alt='bg-image'
       />
       <Image
@@ -31,10 +31,10 @@ const Services = () => {
         width={600}
         height={500}
         quality={100}
-        className='absolute bottom-0 left-0 -z-10 -rotate-180'
+        className='absolute bottom-0 left-0 z-10 -rotate-180'
         alt='bg-image'
       />
-      <div className='relative z-10 flex w-full flex-col gap-4 px-6 md:px-0 md:pl-[60px]'>
+      <div className='relative z-10 flex w-full flex-col gap-4 px-6 md:pl-[60px] md:pr-3'>
         <Heading
           heading='SERVICES'
           textSize='3xl'
@@ -44,7 +44,7 @@ const Services = () => {
           paragraph={paragraph}
           textSize='lg'
           font='sherika'
-          className='text-left text-sm md:text-sm'
+          className='text-justify text-sm md:text-sm'
         />
         <div className='flex flex-col gap-4'>
           <Paragraph
