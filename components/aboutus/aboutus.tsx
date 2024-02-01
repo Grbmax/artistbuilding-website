@@ -22,10 +22,10 @@ const AboutUs = () => {
         alt='bg-image'
       />
       <div className='z-10 flex w-full flex-col items-start justify-between px-6 md:flex-row md:px-36'>
-        <div className='flex w-full md:w-3/5'>
+        <div className='z-10 flex w-full md:w-3/5'>
           <div className='flex h-32 w-full flex-col gap-3'>
             <Heading
-              heading={'ABOUT'}
+              heading={'ABOUT US'}
               textSize='xl'
               className='europa text-4xl font-semibold md:text-8xl'
             />
@@ -41,7 +41,7 @@ const AboutUs = () => {
           <Image
             src='/website-assets/about.png'
             fill
-            className='object-fit'
+            className='object-contain opacity-40 md:opacity-100'
             quality={100}
             alt='about-image'
           />
