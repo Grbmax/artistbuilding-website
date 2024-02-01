@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import bgImage from '@/public/website-assets/2.png';
+import bgImage from '@/public/website-assets/building-text.png';
 import Heading from '../ui/heading';
 // import Paragraph from '../ui/paragraph';
 
