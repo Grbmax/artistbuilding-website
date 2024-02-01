@@ -92,8 +92,8 @@ const Navbar = () => {
         <Image
           src={logoImage}
           alt='ArtistBuilding Logo'
-          width={125}
-          height={125}
+          width={145}
+          height={145}
         />
       </div>
       <div className='hidden space-x-2 md:flex md:space-x-4 lg:space-x-6'>
