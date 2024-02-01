@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.2",
+    "@vercel/speed-insights": "^1.0.9",
     "contentful-management": "^11.1.0",
     "lucide-react": "^0.284.0",
     "next": "latest",
