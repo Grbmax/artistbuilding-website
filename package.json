@@ -11,6 +11,7 @@
     "format:fix": "prettier --write --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.1.2",
     "contentful-management": "^11.1.0",
     "lucide-react": "^0.284.0",
     "next": "latest",
