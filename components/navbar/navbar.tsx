@@ -1,15 +1,16 @@
 'use client';
 
-import ColumnLogo from '../icons/column-logo';
-import ArtistBuilding from '../icons/artistbuilding';
 import { ScrollContext } from '@/lib/scroll-observer';
 import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import SplashScreen from '../splash-screen/splashScreen';
+import Image from 'next/image';
+import logoImage from '@/public/website-assets/logo-2.png';
 
 const Navbar = () => {
   const { activeSection } = useContext(ScrollContext);
   const [loading, setLoading] = useState(true);
+  // const loading = true;
 
   const routes = [
     {
@@ -88,21 +89,36 @@ const Navbar = () => {
       className={`text-bold absolute z-10 hidden h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl md:flex md:space-x-4 lg:space-x-6`}
     >
       <div className='flex flex-col items-center gap-[10px]'>
-        <ArtistBuilding />
-        <ColumnLogo />
+        <Image
+          src={logoImage}
+          alt='ArtistBuilding Logo'
+          width={125}
+          height={125}
+        />
       </div>
       <div className='hidden space-x-2 md:flex md:space-x-4 lg:space-x-6'>
-        {routes.map((route) => (
-          <Link
-            key={route.href}
-            href={route.href}
-            passHref
-            onClick={(e) => handleClick(e, route.href)}
-            className={`${route.active ? 'primary-text' : 'secondary-text'}`}
-          >
-            {route.label}
-          </Link>
-        ))}
+        {routes.map((route) =>
+          route.href.startsWith('/') ? (
+            <Link
+              key={route.href}
+              href={route.href}
+              passHref
+              className={`${route.active ? 'primary-text text-base' : 'secondary-text text-base'}`}
+            >
+              {route.label}
+            </Link>
+          ) : (
+            <Link
+              key={route.href}
+              href={route.href}
+              passHref
+              onClick={(e) => handleClick(e, route.href)}
+              className={`${route.active ? 'primary-text text-base' : 'secondary-text text-base'}`}
+            >
+              {route.label}
+            </Link>
+          )
+        )}
       </div>
     </nav>
   );

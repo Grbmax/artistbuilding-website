@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import bgImage from '@/public/website-assets/2.png';
 import Heading from '../ui/heading';
-import Paragraph from '../ui/paragraph';
+// import Paragraph from '../ui/paragraph';
 
-const paragraph = ``;
+// const paragraph = ``;
 
 const Clientele = () => {
   return (
@@ -27,23 +27,23 @@ const Clientele = () => {
               textSize='xl'
               className='europa text-4xl font-semibold md:text-4xl'
             />
-            {paragraph && paragraph.length > 0 && (
+            {/* {paragraph && paragraph.length > 0 && (
               <Paragraph
                 paragraph={paragraph}
                 textSize='xs'
                 font='sherika'
                 className='text-left text-sm md:text-xl'
               />
-            )}
+            )} */}
           </div>
         </div>
         <div className='flex h-full w-full flex-col items-end justify-between pt-[7.5rem]'>
-          <div className='flex h-[20px] w-full items-center justify-between'>
+          <div className='flex h-[40px] w-full items-center justify-between'>
             <div className='relative flex h-full w-[70px]'>
               <Image
                 src='/client-logos/1.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
@@ -52,27 +52,27 @@ const Clientele = () => {
               <Image
                 src='/client-logos/2.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
             </div>
             <div className='relative flex h-full w-[70px]'>
               <Image
-                src='/client-logos/1.png'
+                src='/client-logos/3.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
             </div>
           </div>
-          <div className='flex h-[25px] w-full items-center justify-between'>
+          <div className='flex h-[40px] w-full items-center justify-between'>
             <div className='relative flex h-full w-[70px]'>
               <Image
                 src='/client-logos/4.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
@@ -81,7 +81,7 @@ const Clientele = () => {
               <Image
                 src='/client-logos/5.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
@@ -90,18 +90,18 @@ const Clientele = () => {
               <Image
                 src='/client-logos/6.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
             </div>
           </div>
-          <div className='flex h-[20px] w-full items-center justify-between'>
+          <div className='flex h-[40px] w-full items-center justify-between'>
             <div className='relative flex h-full w-[70px]'>
               <Image
                 src='/client-logos/7.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
@@ -110,7 +110,7 @@ const Clientele = () => {
               <Image
                 src='/client-logos/8.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
@@ -119,18 +119,18 @@ const Clientele = () => {
               <Image
                 src='/client-logos/9.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
             </div>
           </div>
-          <div className='flex h-[20px] w-full items-center justify-between'>
+          <div className='flex h-[40px] w-full items-center justify-between'>
             <div className='relative flex h-full w-[70px]'>
               <Image
                 src='/client-logos/10.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
@@ -139,7 +139,7 @@ const Clientele = () => {
               <Image
                 src='/client-logos/11.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
@@ -148,7 +148,7 @@ const Clientele = () => {
               <Image
                 src='/client-logos/12.png'
                 fill
-                className='object-fit'
+                className='object-contain'
                 quality={100}
                 alt='logo'
               />
@@ -158,7 +158,7 @@ const Clientele = () => {
             <Image
               src='/website-assets/10.png'
               fill
-              className='object-fit'
+              className='object-contain'
               quality={100}
               alt='about-image'
             />
