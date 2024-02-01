@@ -3,7 +3,9 @@ import bgImage from '@/public/website-assets/1.png';
 import Heading from '../ui/heading';
 import Paragraph from '../ui/paragraph';
 
-const paragraph = `publishing and graphic design, Lorem ipsum is a  placeholder text commonly used to demonstrate the visual form of a document or a typeface  without relying on meaningful content.`;
+const paragraph = `At The Artistbuilding, there is always accommodation for your ideas and imagination. A one stop suite for all your visual needs. We make sure every frame is tailored to you and what you envision.
+We believe in the symphony of technology and artistry. 
+Our team of dedicated professionals will weave magic into every frame, whether it’s a pulse-pounding scene of a blockbuster movie or the immersive landscapes of virtual reality, we thrive on challenges that push us to reimagine reality.`;
 
 const AboutUs = () => {
   return (
@@ -37,7 +39,7 @@ const AboutUs = () => {
         </div>
         <div className='relative flex h-96 w-full md:w-1/3'>
           <Image
-            src='/website-assets/8.png'
+            src='/website-assets/about.png'
             fill
             className='object-fit'
             quality={100}

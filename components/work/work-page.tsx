@@ -21,7 +21,7 @@ const WorkPage: React.FC<WorkPageProps> = ({ work }) => {
   };
 
   return (
-    <div id='work' className='  flex w-full flex-col border-b bg-black'>
+    <div id='projects' className='  flex w-full flex-col border-b bg-black'>
       <div className='mx-6 pt-6'>
         <h1 className='z-10 flex w-full justify-start text-6xl text-white'>
           Our work

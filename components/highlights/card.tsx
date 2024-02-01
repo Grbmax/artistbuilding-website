@@ -26,7 +26,7 @@ const HighlightCard: React.FC<HighlightsData> = ({
             loop
             muted
             playsInline
-            className='flex min-h-fit w-full items-center justify-center rounded-xl border border-opacity-10 md:min-h-max'
+            className='flex min-h-fit w-full items-center justify-center rounded-xl border border-opacity-10 hover:border-2 hover:border-purple-500 md:min-h-max'
           >
             <source src={video}></source>
           </video>
