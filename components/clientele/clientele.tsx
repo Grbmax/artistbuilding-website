@@ -13,7 +13,7 @@ const Clientele = () => {
     >
       <Image
         src={bgImage}
-        width={1300}
+        width={600}
         height={500}
         quality={100}
         className='absolute bottom-0 left-0 z-0'

@@ -15,7 +15,7 @@ const AboutUs = () => {
     >
       <Image
         src={bgImage}
-        width={1300}
+        width={1100}
         height={800}
         quality={100}
         className='absolute bottom-0 right-0 z-0'
