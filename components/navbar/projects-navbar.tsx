@@ -53,7 +53,7 @@ const ProjectsNav = () => {
     <SplashScreen isWorksPage={true} />
   ) : (
     <nav
-      className={`text-bold absolute z-10 h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl md:flex md:space-x-4 lg:space-x-6`}
+      className={`text-bold absolute z-20 h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl md:flex md:space-x-4 lg:space-x-6`}
     >
       <div className='flex flex-col items-center gap-[10px]'>
         <Image

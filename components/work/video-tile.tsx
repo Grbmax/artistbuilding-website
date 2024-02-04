@@ -40,7 +40,7 @@ const VideoTile: React.FC<VideoTileProps> = ({ videoID, title, subtitle }) => {
   return (
     <React.Fragment key={videoID}>
       <div
-        className='relative h-80 w-full cursor-pointer overflow-hidden bg-gray-700 sm:mb-3'
+        className='relative h-full w-full cursor-pointer overflow-hidden bg-gray-700 sm:mb-3'
         onClick={handlePlayClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -88,7 +88,7 @@ const VideoTile: React.FC<VideoTileProps> = ({ videoID, title, subtitle }) => {
       {isPlaying && (
         <div className='fixed left-0 top-0 z-50 flex h-screen w-screen flex-col items-center justify-center bg-black bg-opacity-90'>
           <button
-            className='absolute right-5 top-5 mr-5 rounded-full p-2'
+            className='absolute right-20 top-5 mr-5 rounded-full p-2'
             onClick={handleCloseClick}
           >
             <svg

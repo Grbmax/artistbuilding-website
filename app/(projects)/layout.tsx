@@ -1,3 +1,4 @@
+import Overlay from '@/components/highlights/overlay';
 import ProjectsNav from '@/components/navbar/projects-navbar';
 import React from 'react';
 
@@ -9,7 +10,8 @@ export default function HomeLayout({
   return (
     <>
       <ProjectsNav />
-      <main id='scroll-container' className='overflow-hidden'>
+      <Overlay />
+      <main id='scroll-container' className='z-10 overflow-hidden'>
         <article>{children}</article>
       </main>
     </>

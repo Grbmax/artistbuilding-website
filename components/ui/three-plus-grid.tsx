@@ -12,7 +12,7 @@ const ThreePlusGrid: React.FC<ThreePlusGridProps> = ({ top }) => {
         key={i}
         width={20}
         height={20}
-        className='hover:animation-spin transition-all'
+        className='hover:animation-spin transition-all z-20'
         id={top ? `icon-${i}-top` : `icon-${i}`}
       />
     );
