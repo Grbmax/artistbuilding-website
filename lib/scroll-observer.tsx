@@ -1,4 +1,5 @@
 'use client';
+import { usePathname } from 'next/navigation';
 import { createContext, useEffect, useState } from 'react';
 
 interface ActiveSectionValue {
@@ -15,13 +16,16 @@ export const ScrollContext = createContext<ActiveSectionValue>({
 
 const ScrollObserver: React.FC<ScrollObserverProps> = ({ children }) => {
   const [activeSection, setActiveSection] = useState('');
+  const pathname = usePathname();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && pathname === '/') {
             setActiveSection(entry.target.id);
+          } else if (pathname !== '/') {
+            setActiveSection('');
           }
         });
       },
@@ -38,7 +42,7 @@ const ScrollObserver: React.FC<ScrollObserverProps> = ({ children }) => {
         observer.unobserve(section);
       });
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <ScrollContext.Provider value={{ activeSection }}>

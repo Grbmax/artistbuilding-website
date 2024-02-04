@@ -6,11 +6,12 @@ import Link from 'next/link';
 import SplashScreen from '../splash-screen/splashScreen';
 import Image from 'next/image';
 import logoImage from '@/public/website-assets/logo-2.png';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const { activeSection } = useContext(ScrollContext);
   const [loading, setLoading] = useState(true);
-  // const loading = true;
+  const pathname = usePathname();
 
   const routes = [
     {
@@ -18,15 +19,13 @@ const Navbar = () => {
       label: 'Home',
       active: activeSection === 'home',
     },
-    // {
-    //   href: '#what-we-do',
-    //   label: 'What We Do',
-    //   active: activeSection === 'what-we-do',
-    // },
     {
-      href: '#highlights',
+      href: '/projects',
       label: 'Projects',
-      active: activeSection.startsWith('highlight'),
+      active:
+        activeSection.startsWith('highlight') ||
+        activeSection === 'what-we-do' ||
+        pathname === '/projects',
     },
     {
       href: '#services',

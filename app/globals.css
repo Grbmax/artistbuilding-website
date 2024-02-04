@@ -201,3 +201,111 @@ section {
 }
 
 
+
+@keyframes icon1TopAnimation {
+  0% {
+    transform: translate(0, 45vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon2TopAnimation {
+  0% {
+    transform: translate(-47vw, 45vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon0TopAnimation {
+  0% {
+    transform: translate(47vw, 45vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon0MidAnimation {
+  0% {
+    transform: translate(47vw, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon1MidAnimation {
+  0% {
+    transform: translate(-47vw, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon1BottomAnimation {
+  0% {
+   transform: translate(0, -39vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon2BottomAnimation {
+  0% {
+    transform: translate(-47vw, -39vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon0BottomAnimation {
+  0% {
+    transform: translate(47vw, -39vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+#icon-0-mid {
+  animation: icon0MidAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
+}
+
+#icon-1-mid {
+  animation: icon1MidAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
+}
+
+#icon-0-top {
+  animation: icon0TopAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
+}
+
+#icon-1-top {
+  animation: icon1TopAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
+}
+
+#icon-2-top {
+  animation: icon2TopAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
+}
+
+#icon-0 {
+  animation: icon0BottomAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
+}
+
+#icon-1 {
+  animation: icon1BottomAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
+}
+
+#icon-2 {
+  animation: icon2BottomAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
+}
+
+
+
+

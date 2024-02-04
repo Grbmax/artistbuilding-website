@@ -1,6 +1,10 @@
 import { Plus } from 'lucide-react';
 
-const ThreePlusGrid = () => {
+interface ThreePlusGridProps {
+  top?: boolean;
+}
+
+const ThreePlusGrid: React.FC<ThreePlusGridProps> = ({ top }) => {
   const plusIcons = [];
   for (let i = 0; i < 3; i++) {
     plusIcons.push(
@@ -9,6 +13,7 @@ const ThreePlusGrid = () => {
         width={20}
         height={20}
         className='hover:animation-spin transition-all'
+        id={top ? `icon-${i}-top` : `icon-${i}`}
       />
     );
   }
@@ -17,7 +22,3 @@ const ThreePlusGrid = () => {
 };
 
 export default ThreePlusGrid;
-
-
-
-

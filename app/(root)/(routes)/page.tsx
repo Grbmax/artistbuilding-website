@@ -23,15 +23,13 @@ export default async function Home() {
 
   return (
     <React.Fragment>
-      <article>
-        <MastHead reelURL={reelURL} />
-        <WhatWeDo />
-        {highlights ? <HighlightsComponent highlights={highlights} /> : null}
-        <Services />
-        <AboutUs />
-        <Clientele />
-        <Contact />
-      </article>
+      <MastHead reelURL={reelURL} />
+      <WhatWeDo />
+      {highlights ? <HighlightsComponent highlights={highlights} /> : null}
+      <Services />
+      <AboutUs />
+      <Clientele />
+      <Contact />
     </React.Fragment>
   );
 }
