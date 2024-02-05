@@ -18,6 +18,7 @@ const WorkPage: React.FC<WorkPageProps> = ({ work }) => {
     null
   );
 
+  // If current hovered tile is null then memoize the last hovered tile
   const handleMouseEnter = () => {
     setHovered(true);
   };
@@ -29,10 +30,10 @@ const WorkPage: React.FC<WorkPageProps> = ({ work }) => {
   return (
     <div
       id='projects'
-      className='z-10 flex h-full w-full flex-col items-center justify-center p-16'
+      className='z-10 flex h-screen w-full flex-col items-center justify-center px-6 pt-16 md:h-full md:p-16'
     >
       <div
-        className='grid h-full w-full md:grid-cols-2'
+        className='grid h-full w-full gap-5 md:grid-cols-2 md:gap-0'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

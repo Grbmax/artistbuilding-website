@@ -18,7 +18,7 @@ const Projects = async () => {
         <section
           key={i}
           id={`projects`}
-          className='relative min-h-screen flex-col gap-16 bg-black py-6 text-3xl text-white md:flex md:py-16 md:text-4xl'
+          className='relative min-h-screen flex-col gap-16 bg-black py-2 text-3xl text-white md:flex md:py-16 md:text-4xl'
         >
           {workSection ? <WorkPage work={workSection} /> : null}
         </section>
