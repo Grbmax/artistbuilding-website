@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import Heading from '../ui/heading';
 import Paragraph from '../ui/paragraph';
-import bgImage from '@/public/website-assets/5.png';
 import ServicesCard from './services-card';
 import Button from '../ui/button';
 import Link from 'next/link';
@@ -18,22 +16,6 @@ const Services = () => {
       className='relative flex-col gap-16 overflow-hidden bg-black py-2 text-3xl text-white md:flex-row md:py-16 md:text-4xl'
       style={{ minHeight: '85vh' }}
     >
-      <Image
-        src={bgImage}
-        width={600}
-        height={500}
-        quality={100}
-        className='absolute right-0 top-0 z-10'
-        alt='bg-image'
-      />
-      <Image
-        src={bgImage}
-        width={600}
-        height={500}
-        quality={100}
-        className='absolute bottom-0 left-0 z-10 -rotate-180'
-        alt='bg-image'
-      />
       <div className='relative z-10 flex w-full flex-col gap-4 px-6 md:pl-[60px] md:pr-3'>
         <Heading
           heading='SERVICES'

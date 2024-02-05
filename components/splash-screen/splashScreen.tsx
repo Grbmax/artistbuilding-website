@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Overlay from '../highlights/overlay';
+import Overlay from '../overlay/overlay';
 
 interface SplashScreenProps {
   isWorksPage?: boolean;

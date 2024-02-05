@@ -1,6 +1,8 @@
-import Overlay from '@/components/highlights/overlay';
+import Overlay from '@/components/overlay/overlay';
 import ProjectsNav from '@/components/navbar/projects-navbar';
 import React from 'react';
+import VideoOverlay from '@/components/services/video-overlay';
+import VideoOverlayContextProvider from '@/components/overlay/video-overlay-context';
 
 export default function HomeLayout({
   children,
@@ -9,11 +11,14 @@ export default function HomeLayout({
 }) {
   return (
     <>
-      <ProjectsNav />
-      <Overlay />
-      <main id='scroll-container' className='z-10 overflow-hidden'>
-        <article>{children}</article>
-      </main>
+      <VideoOverlayContextProvider>
+        <VideoOverlay />
+        <ProjectsNav />
+        <Overlay />
+        <main id='scroll-container' className='z-10 overflow-hidden'>
+          <article>{children}</article>
+        </main>
+      </VideoOverlayContextProvider>
     </>
   );
 }

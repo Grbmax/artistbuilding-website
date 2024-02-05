@@ -33,7 +33,7 @@ const ProjectsNav = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 3000);
   }, []);
 
   // Disable scrolling when loading

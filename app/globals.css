@@ -144,7 +144,7 @@ body,
   }
 }
 .hover\:animation-spin:hover {
-  animation: plus-spin 0.5s linear forwards;
+  animation: plus-spin 1s linear forwards;
 }
 
 @media (min-width: 768px) {
@@ -305,6 +305,221 @@ section {
 #icon-2 {
   animation: icon2BottomAnimation 3s cubic-bezier(.28,1.69,.68,-0.91) forwards;
 }
+
+@keyframes tileShrink-0 {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(0.5) translate(-20vw, -25vh);
+  }
+}
+
+@keyframes tileShrink-1 {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(0.5) translate(20vw, -25vh);
+  }
+}
+
+@keyframes tileShrink-2 {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(0.5) translate(-20vw, 25vh);
+  }
+}
+
+@keyframes tileShrink-3 {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(0.5) translate(20vw, 25vh);
+  }
+}
+
+.tile-shrink-0 {
+  animation: tileShrink-0 1.5s ease-in-out forwards;
+}
+
+.tile-shrink-1 {
+  animation: tileShrink-1 1.5s ease-in-out forwards;
+}
+
+.tile-shrink-2 {
+  animation: tileShrink-2 1.5s ease-in-out forwards;
+}
+
+.tile-shrink-3 {
+  animation: tileShrink-3 1.5s ease-in-out forwards;
+}
+
+@keyframes tileNormal-0 {
+  0% {
+    transform: scale(0.5) translate(-20vw, -25vh);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes tileNormal-1 {
+  0% {
+    transform: scale(0.5) translate(20vw, -25vh);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes tileNormal-2 {
+  0% {
+    transform: scale(0.5) translate(-20vw, 25vh);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes tileNormal-3 {
+  0% {
+    transform: scale(0.5) translate(20vw, 25vh);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.tile-normal-0 {
+  animation: tileNormal-0 0.5s ease-in-out forwards;
+}
+
+.tile-normal-1 {
+  animation: tileNormal-1 0.5s ease-in-out forwards;
+}
+
+.tile-normal-2 {
+  animation: tileNormal-2 0.5s ease-in-out forwards;
+}
+
+.tile-normal-3 {
+  animation: tileNormal-3 0.5s ease-in-out forwards;
+}
+
+@keyframes tileGrow-0 {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.25) translate(10vw, 10vh);
+  }
+}
+
+@keyframes tileGrow-1 {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.25) translate(-10vw, 10vh);
+  }
+}
+
+@keyframes tileGrow-2 {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.25) translate(10vw, -10vh);
+  }
+}
+
+@keyframes tileGrow-3 {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.25) translate(-10vw, -10vh);
+  }
+}
+
+.tile-grow-0 {
+  animation: tileGrow-0 1s cubic-bezier(.69,.14,.82,.03) forwards;
+}
+
+.tile-grow-1 {
+  animation: tileGrow-1 1s cubic-bezier(.69,.14,.82,.03) forwards;
+}
+
+.tile-grow-2 {
+  animation: tileGrow-2 1s cubic-bezier(.69,.14,.82,.03) forwards;
+}
+
+.tile-grow-3 {
+  animation: tileGrow-3 1s cubic-bezier(.69,.14,.82,.03) forwards;
+}
+
+@keyframes tileGrowNormal-0 {
+  0% {
+    transform: scale(1.25) translate(10vw, 10vh);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    
+  }
+}
+
+@keyframes tileGrowNormal-1 {
+  0% {
+    transform: scale(1.25) translate(-10vw, 10vh);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes tileGrowNormal-2 {
+  0% {
+    transform: scale(1.25) translate(10vw, -10vh);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes tileGrowNormal-3 {
+  0% {
+    transform: scale(1.25) translate(-10vw, -10vh);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.tile-grow-normal-0 {
+  animation: tileGrowNormal-0 0.5s ease-in-out forwards;
+}
+
+.tile-grow-normal-1 {
+  animation: tileGrowNormal-1 0.5s ease-in-out forwards;
+}
+
+.tile-grow-normal-2 {
+  animation: tileGrowNormal-2 0.5s ease-in-out forwards;
+}
+
+.tile-grow-normal-3 {
+  animation: tileGrowNormal-3 0.5s ease-in-out forwards;
+}
+
+
+
+
+
+
 
 
 
