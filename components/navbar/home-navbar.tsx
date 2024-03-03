@@ -65,7 +65,7 @@ const Navbar = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 4500);
   }, []);
 
   // Disable scrolling when loading
