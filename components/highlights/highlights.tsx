@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import HighlightCard from './card';
+import { cn } from '@/lib/utils';
 
 export interface HighlightsData {
   brand: string;
@@ -9,6 +10,7 @@ export interface HighlightsData {
   heading: string;
   paragraph: string;
   className?: string;
+  start?: boolean;
 }
 
 export interface Highlights {
@@ -21,27 +23,25 @@ interface HighlightCardProps {
 }
 
 const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
+  const parentStyles = cn(
+    `grid h-screen min-w-max grid-cols-${highlights.data.length + 1} gap-[12rem] overflow-visible bg-black pb-16 pt-20 text-white`
+  );
   return (
-    <React.Fragment>
+    <section className={parentStyles}>
       {highlights.data.map((highlight: HighlightsData, index) => {
         return (
-          <section
-            className='bg-black'
-            style={{ display: 'unset' }}
-            id={`highlight-${index}`}
-            key={highlight.video}
-          >
-            <HighlightCard
-              brand={highlight.brand}
-              brandHex={highlight.brandHex}
-              heading={highlight.heading}
-              paragraph={highlight.paragraph}
-              video={highlight.video}
-            />
-          </section>
+          <HighlightCard
+            key={index}
+            brand={highlight.brand}
+            brandHex={highlight.brandHex}
+            heading={highlight.heading}
+            paragraph={highlight.paragraph}
+            video={highlight.video}
+            start={index % 2 === 0}
+          />
         );
       })}
-    </React.Fragment>
+    </section>
   );
 };
 
