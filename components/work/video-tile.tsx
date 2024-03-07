@@ -58,12 +58,12 @@ const VideoTile: React.FC<VideoTileProps> = ({
     scale: parentHovered ? (currentHoveredTile === null ? 1 : 0.5) : 1,
     translateX: isHovering ? (index % 2 === 0 ? 20 : -20) : 0,
     translateY: isHovering ? (index < 2 ? 25 : -25) : 0,
-    transition: { duration: isHovering ? 1.5 : 0.5, ease: 'easeInOut' },
+    transition: { duration: isHovering ? 1.5 : 1.4, ease: 'easeInOut' },
   };
 
   const tileHoverAnimation = {
     scale: 1.1,
-    transition: { duration: 1.5, ease: 'easeInOut' },
+    transition: { duration: 1.5, ease: 'easeInOut', delay: 0.35 },
   };
 
   return (

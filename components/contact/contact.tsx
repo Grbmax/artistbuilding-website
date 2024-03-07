@@ -1,7 +1,7 @@
 'use client';
 import Heading from '../ui/heading';
 import Button from '../ui/button';
-import { Mail, Phone, Send } from 'lucide-react';
+import { Loader2, Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import Input from '../ui/input';
@@ -9,6 +9,7 @@ import {
   ContactUsQueryProps,
   createContactQuery,
 } from '@/lib/Contentful/Contact/create-contact';
+import { sendEmail } from '@/lib/email';
 
 const Contact = () => {
   const [name, setName] = useState<string | null>(null);
@@ -22,6 +23,8 @@ const Contact = () => {
     null
   );
   const [messageError, setMessageError] = useState<string | null>(null);
+
+  const [loading, setLoading] = useState<boolean>(false);
 
   //Validate form with regex
   const validateForm = () => {
@@ -74,12 +77,20 @@ const Contact = () => {
         contact: contactNumber,
         message,
       };
-      const res = await createContactQuery(data);
-      if (res) {
-        setName('');
-        setEmail('');
-        setContactNumber('');
-        setMessage('');
+      try {
+        setLoading(true);
+        const res = await createContactQuery(data);
+        const mail = await sendEmail(data);
+        if (res && mail) {
+          setLoading(false);
+          setName('');
+          setEmail('');
+          setContactNumber('');
+          setMessage('');
+        }
+      } catch (error) {
+        setLoading(false);
+        console.error('Error in sending email: ', error);
       }
     }
   };
@@ -179,7 +190,11 @@ const Contact = () => {
               className='flex items-center justify-center text-sm'
               type='submit'
             >
-              <Send size={18} />
+              {loading ? (
+                <Loader2 size={18} className='animate-spin' />
+              ) : (
+                <Send size={18} />
+              )}
             </Button>
             <p className='text-sm'>OR</p>
             <Link

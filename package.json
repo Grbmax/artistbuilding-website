@@ -15,14 +15,17 @@
     "@vercel/speed-insights": "^1.0.9",
     "contentful-management": "^11.1.0",
     "framer-motion": "^11.0.8",
+    "googleapis": "^133.0.0",
     "lucide-react": "^0.284.0",
     "next": "latest",
+    "nodemailer": "^6.9.11",
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.2"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
