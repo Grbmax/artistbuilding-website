@@ -11,7 +11,6 @@ const Projects = async () => {
 
     for (let i = 0; i < work.length; i += 4) {
       const workSection = work.slice(i, i + 4);
-      console.log('Work Section', workSection);
 
       // Push each section into the sections array instead of returning it
       sections.push(

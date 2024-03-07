@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import ArrowRight from '../icons/arrowRight';
 import ArrowRightLong from '../icons/arrowRightLong';
 import Heading from '../ui/heading';
@@ -11,8 +12,21 @@ interface HeroVideoProps {
 const paragraph = `Explore boundless creativity, where we turn your ideas into reality through streamlined processes, expert craftsmanship and business acumen. Witness a uniquely successful experience like never before`;
 
 const MastHead: React.FC<HeroVideoProps> = ({ reelURL }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 3500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section id='home'>
+    <section
+      id='home'
+      className={`transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+    >
       <div className='flex min-h-screen w-full min-w-full flex-col items-center justify-center bg-[a2a2a4] text-white'>
         <video
           autoPlay

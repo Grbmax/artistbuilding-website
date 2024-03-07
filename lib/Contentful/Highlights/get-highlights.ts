@@ -14,6 +14,7 @@ export const getHighlights = async () => {
     environmentId: ENVIORNMENT_ID,
     query: {
       content_type: HIGHLIGHTS_TYPE,
+      limit: 6,
     },
   });
 

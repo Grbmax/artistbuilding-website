@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { useContext } from 'react';
 import { useState, useEffect } from 'react';
 import { VideoOverlayContext } from '../overlay/video-overlay-context';
+import { motion } from 'framer-motion';
 
 type VideoTileProps = {
   videoID: string;
@@ -37,12 +38,6 @@ const VideoTile: React.FC<VideoTileProps> = ({
     setVideoID(videoID);
   };
 
-  useEffect(() => {
-    if (showOverlay === false) {
-      setIsPlaying(false);
-    }
-  }, [showOverlay]);
-
   const handleMouseEnter = () => {
     setIsHovering(true);
     setCurrentHoveredTile(index);
@@ -50,47 +45,33 @@ const VideoTile: React.FC<VideoTileProps> = ({
 
   const handleMouseLeave = () => {
     setIsHovering(false);
+    setCurrentHoveredTile(null);
   };
 
   useEffect(() => {
-    // This effect runs on the client after the initial render
-    // It ensures that the state values match the server-rendered values
-    setIsPlaying(false);
-    setIsHovering(false);
-  }, []);
+    if (showOverlay === false) {
+      setIsPlaying(false);
+    }
+  }, [showOverlay]);
 
-  let tileClassName = `tile-normal-${index}`;
-  if (isHovering) {
-    tileClassName = `tile-grow-${index}`;
-  }
+  const tileAnimation = {
+    scale: parentHovered ? (currentHoveredTile === null ? 1 : 0.5) : 1,
+    translateX: isHovering ? (index % 2 === 0 ? 20 : -20) : 0,
+    translateY: isHovering ? (index < 2 ? 25 : -25) : 0,
+    transition: { duration: isHovering ? 1.5 : 1.4, ease: 'easeInOut' },
+  };
 
-  if (parentHovered && currentHoveredTile !== index) {
-    tileClassName = `tile-shrink-${index}`;
-  }
-
-  if (parentHovered && currentHoveredTile === index) {
-    tileClassName = `tile-grow-${index}`;
-  }
-
-  if (parentHovered && currentHoveredTile === null) {
-    tileClassName = `tile-shrink-${index}`;
-    if (index === 0) tileClassName = `tile-grow-0`;
-  }
-
-  if (!parentHovered && currentHoveredTile === index) {
-    tileClassName = `tile-grow-normal-${index}`;
-  }
-
-  if (
-    tileClassName === `tile-shrink-${index}` &&
-    currentHoveredTile !== index
-  ) {
-  }
+  const tileHoverAnimation = {
+    scale: 1.1,
+    transition: { duration: 1.5, ease: 'easeInOut', delay: 0.35 },
+  };
 
   return (
-    <div
+    <motion.div
       key={videoID}
-      className={`relative mb-3 h-full w-full cursor-pointer overflow-hidden bg-gray-700 md:mb-0 ${tileClassName}`}
+      className={`relative mb-3 h-full w-full cursor-pointer overflow-hidden bg-gray-700 md:mb-0`}
+      animate={tileAnimation}
+      whileHover={tileHoverAnimation}
       onClick={handlePlayClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -112,7 +93,7 @@ const VideoTile: React.FC<VideoTileProps> = ({
           )}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 export default VideoTile;
