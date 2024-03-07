@@ -2,7 +2,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import ScrollObserver from '@/lib/scroll-observer';
-import Navbar from '@/components/navbar/navbar';
 import localFont from 'next/font/local';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -54,13 +53,9 @@ export default function RootLayout({
         className={`${montserrat.variable} ${inter.variable} ${sherika.variable} ${akira.variable} ${europa.variable}`}
       >
         <ScrollObserver>
-          <Navbar />
-          <main id='scroll-container' className='overflow-hidden'>
-            {children}
-            <SpeedInsights />
-            <Analytics />
-          </main>
-          {/* <Footer /> */}
+          {children}
+          <SpeedInsights />
+          <Analytics />
         </ScrollObserver>
       </body>
     </html>

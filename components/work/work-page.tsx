@@ -13,42 +13,45 @@ export interface WorkData {
 }
 
 const WorkPage: React.FC<WorkPageProps> = ({ work }) => {
-  const [visibleCount, setVisibleCount] = useState(6);
+  const [hovered, setHovered] = useState(false);
+  const [currentHoveredTile, setCurrentHoveredTile] = useState<number | null>(
+    null
+  );
 
-  //Only show the first 6 videos
-  const loadMore = () => {
-    setVisibleCount(visibleCount + 6);
+  // If current hovered tile is null then memoize the last hovered tile
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
   };
 
   return (
-    <div id='projects' className='  flex w-full flex-col border-b bg-black'>
-      <div className='mx-6 pt-6'>
-        <h1 className='z-10 flex w-full justify-start text-6xl text-white'>
-          Our work
-        </h1>
-      </div>
-      <div className='mx-6 grid py-6 md:grid-cols-3'>
+    <div
+      id='projects'
+      className='z-10 flex h-screen w-full flex-col items-center justify-center px-6 pt-16 md:h-full md:p-16'
+    >
+      <div
+        className='grid h-full w-full gap-5 md:grid-cols-2 md:gap-0'
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         {work
-          ?.slice(0, visibleCount)
-          .map((data, index) => (
-            <VideoTile
-              key={index}
-              videoID={data.videoId}
-              title={data.title}
-              subtitle={data.subtitle}
-            />
-          ))}
+          ? work.map((data, index) => (
+              <VideoTile
+                key={index}
+                videoID={data.videoId}
+                title={data.title}
+                subtitle={data.subtitle}
+                parentHovered={hovered}
+                index={index}
+                currentHoveredTile={currentHoveredTile}
+                setCurrentHoveredTile={setCurrentHoveredTile}
+              />
+            ))
+          : null}
       </div>
-      {work && visibleCount < work?.length ? (
-        <div className='mx-6 flex pb-6'>
-          <button
-            onClick={loadMore}
-            className='text-md max-w-max rounded bg-white px-4 text-black '
-          >
-            Load More
-          </button>
-        </div>
-      ) : null}
     </div>
   );
 };

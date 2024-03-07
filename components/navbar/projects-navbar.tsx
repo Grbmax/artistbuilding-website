@@ -1,52 +1,19 @@
 'use client';
 
-import { ScrollContext } from '@/lib/scroll-observer';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import SplashScreen from '../splash-screen/splashScreen';
 import Image from 'next/image';
 import logoImage from '@/public/website-assets/logo-2.png';
 
-const Navbar = () => {
-  const { activeSection } = useContext(ScrollContext);
+const ProjectsNav = () => {
   const [loading, setLoading] = useState(true);
-  // const loading = true;
 
   const routes = [
     {
-      href: '#home',
+      href: '/',
       label: 'Home',
-      active: activeSection === 'home',
-    },
-    // {
-    //   href: '#what-we-do',
-    //   label: 'What We Do',
-    //   active: activeSection === 'what-we-do',
-    // },
-    {
-      href: '#highlights',
-      label: 'Projects',
-      active: activeSection.startsWith('highlight'),
-    },
-    {
-      href: '#services',
-      label: 'Services',
-      active: activeSection === 'services',
-    },
-    {
-      href: '#about-us',
-      label: 'About Us',
-      active: activeSection === 'about-us',
-    },
-    {
-      href: '#clients',
-      label: 'Clientele',
-      active: activeSection === 'clients',
-    },
-    {
-      href: '#contact',
-      label: 'Contact',
-      active: activeSection === 'contact',
+      active: false,
     },
   ];
 
@@ -66,7 +33,7 @@ const Navbar = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 3000);
   }, []);
 
   // Disable scrolling when loading
@@ -83,10 +50,10 @@ const Navbar = () => {
   }, [loading]);
 
   return loading ? (
-    <SplashScreen />
+    <SplashScreen isWorksPage={true} />
   ) : (
     <nav
-      className={`text-bold absolute z-10 h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl md:flex md:space-x-4 lg:space-x-6`}
+      className={`text-bold absolute z-20 h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl md:flex md:space-x-4 lg:space-x-6`}
     >
       <div className='flex flex-col items-center gap-[10px]'>
         <Image
@@ -124,4 +91,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default ProjectsNav;
