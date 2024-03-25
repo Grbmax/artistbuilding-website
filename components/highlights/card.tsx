@@ -43,8 +43,8 @@ const HighlightCard: React.FC<HighlightsData> = ({
             {brand}
           </h1>
         </div>
-        <div className='flex w-full flex-col items-center justify-center gap-2 px-6 md:absolute md:-right-[38rem] md:top-12  md:h-[256px] md:max-h-[256px] md:w-[40rem] md:max-w-[40rem] md:items-start md:justify-end md:gap-0 md:px-0'>
-          <h1 className='text-center text-4xl font-bold drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] md:text-start md:text-6xl xl:text-8xl'>
+        <div className='flex w-full flex-col items-center justify-center gap-2 px-6 md:absolute md:-right-[38rem] md:top-12 md:h-[256px]  md:max-h-[256px] md:w-[40rem] md:max-w-[40rem] md:items-start md:justify-center md:gap-0 md:px-0 xl:justify-end'>
+          <h1 className='text-center text-4xl font-bold drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] md:text-start md:text-5xl xl:text-8xl'>
             {heading}
           </h1>
           <p className='text-center text-xl md:text-start lg:text-2xl'>

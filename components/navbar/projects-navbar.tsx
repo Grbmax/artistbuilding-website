@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import SplashScreen from '../splash-screen/splashScreen';
 import Image from 'next/image';
-import logoImage from '@/public/website-assets/logo-2.png';
+import logoImage from '@/public/website-assets/logoside.png';
 
 const ProjectsNav = () => {
   const [loading, setLoading] = useState(true);
@@ -33,7 +33,7 @@ const ProjectsNav = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1500);
   }, []);
 
   // Disable scrolling when loading
@@ -53,16 +53,20 @@ const ProjectsNav = () => {
     <SplashScreen isWorksPage={true} />
   ) : (
     <nav
-      className={`text-bold absolute z-20 h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl md:flex md:space-x-4 lg:space-x-6`}
+      className={`text-bold absolute z-20 h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl transition-opacity md:flex md:space-x-4 lg:space-x-6 ${loading ? 'opacity-0' : 'opacity-100'}`}
     >
-      <div className='flex flex-col items-center gap-[10px]'>
+      <Link
+        href={'/'}
+        prefetch
+        className='flex flex-col items-center gap-[10px]'
+      >
         <Image
           src={logoImage}
           alt='ArtistBuilding Logo'
-          width={145}
-          height={145}
+          width={165}
+          height={165}
         />
-      </div>
+      </Link>
       <div className='hidden space-x-2 md:flex md:space-x-4 lg:space-x-6'>
         {routes.map((route) =>
           route.href.startsWith('/') ? (
