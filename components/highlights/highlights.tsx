@@ -25,7 +25,7 @@ interface HighlightCardProps {
 
 const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
   const parentStyles = cn(
-    `flex px-1 md:px-0 min-h-screen md:grid md:h-screen md:min-w-max md:grid-cols-5 gap-[5rem] md:gap-[12rem] overflow-visible bg-black pb-16 pt-20 text-white`
+    `flex flex-col md:flex-row px-1 md:px-0 min-h-screen md:grid md:h-screen md:min-w-max md:grid-cols-5 gap-[5rem] md:gap-[12rem] overflow-visible bg-black pb-16 pt-20 text-white`
   );
 
   return (
