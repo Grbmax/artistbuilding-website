@@ -2,7 +2,6 @@
 import React from 'react';
 import HighlightCard from './card';
 import { cn } from '@/lib/utils';
-import Heading from '../ui/heading';
 import Link from 'next/link';
 
 export interface HighlightsData {
