@@ -2,6 +2,7 @@
 import React from 'react';
 import HighlightCard from './card';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export interface HighlightsData {
   brand: string;
@@ -24,8 +25,9 @@ interface HighlightCardProps {
 
 const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
   const parentStyles = cn(
-    `flex flex-col px-1 md:px-0 min-h-screen md:grid md:h-screen md:min-w-max md:grid-cols-5 gap-[5rem] md:gap-[12rem] overflow-visible bg-black pb-16 pt-20 text-white`
+    `flex flex-col md:flex-row px-1 md:px-0 min-h-screen md:grid md:h-screen md:min-w-max md:grid-cols-5 gap-[5rem] md:gap-[12rem] overflow-visible bg-black pb-16 pt-20 text-white`
   );
+
   return (
     <section className={parentStyles}>
       {highlights.data.map((highlight: HighlightsData, index) => {
@@ -41,6 +43,15 @@ const HighlightsComponent: React.FC<HighlightCardProps> = ({ highlights }) => {
           />
         );
       })}
+      <div className='flex h-full flex-col items-center justify-end pt-5'>
+        <Link
+          className='flex w-auto items-center justify-center rounded-xl bg-[#B295C3] px-3 py-2 font-semibold transition hover:opacity-60'
+          href='/projects'
+          prefetch={true}
+        >
+          See more projects
+        </Link>
+      </div>
     </section>
   );
 };
