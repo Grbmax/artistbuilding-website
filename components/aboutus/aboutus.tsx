@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import bgImage from '@/public/website-assets/artist-text.png';
+import bgImage from '@/public/website-assets/ArtistBui.png';
 import Heading from '../ui/heading';
 import Paragraph from '../ui/paragraph';
 
@@ -18,7 +18,7 @@ const AboutUs = () => {
         width={1100}
         height={800}
         quality={100}
-        className='absolute bottom-0 right-0 z-0'
+        className='absolute right-5 bottom-0 z-0'
         alt='bg-image'
       />
       <div className='z-10 flex w-full flex-col items-start justify-between px-6 md:flex-row md:px-36'>

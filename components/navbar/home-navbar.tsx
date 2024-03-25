@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import SplashScreen from '../splash-screen/splashScreen';
 import Image from 'next/image';
-import logoImage from '@/public/website-assets/logo-2.png';
+import logoImage from '@/public/website-assets/logoside.png';
 import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
@@ -87,14 +87,18 @@ const Navbar = () => {
     <nav
       className={`text-bold absolute z-10 h-fit w-full items-center justify-between space-x-2 bg-transparent px-8 py-4 text-2xl md:flex md:space-x-4 lg:space-x-6`}
     >
-      <div className='flex flex-col items-center gap-[10px]'>
+      <Link
+        href={'/'}
+        prefetch
+        className='flex flex-col items-center gap-[10px]'
+      >
         <Image
           src={logoImage}
           alt='ArtistBuilding Logo'
-          width={145}
-          height={145}
+          width={165}
+          height={155}
         />
-      </div>
+      </Link>
       <div className='hidden space-x-2 md:flex md:space-x-4 lg:space-x-6'>
         {routes.map((route) =>
           route.href.startsWith('/') ? (
