@@ -4,7 +4,6 @@ import React from 'react';
 
 const Projects = async () => {
   const work = (await getWork()) as WorkData[];
-  console.log('loaded');
 
   //Render new section for every 4 works
   const renderWork = (work: WorkData[]) => {
