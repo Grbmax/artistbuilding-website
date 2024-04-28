@@ -16,7 +16,7 @@ const Clientele = () => {
         width={400}
         height={600}
         quality={100}
-        className='absolute bottom-0 left-0 z-0'
+        className='absolute bottom-0 left-0 z-0 hidden md:block'
         alt='bg-image'
       />
       <div className='z-10 flex h-full w-full flex-col items-start justify-between px-6 md:flex-row md:items-center md:px-36'>

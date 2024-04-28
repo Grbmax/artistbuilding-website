@@ -18,7 +18,7 @@ const AboutUs = () => {
         width={1100}
         height={800}
         quality={100}
-        className='absolute right-5 bottom-0 z-0'
+        className='absolute bottom-0 right-5 z-0 hidden md:block'
         alt='bg-image'
       />
       <div className='z-10 flex w-full flex-col items-start justify-between px-6 md:flex-row md:px-36'>
