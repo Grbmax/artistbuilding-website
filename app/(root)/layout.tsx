@@ -9,7 +9,7 @@ export default function HomeLayout({
   return (
     <>
       <Navbar />
-      <main id='scroll-container' className='overflow-hidden'>
+      <main id='scroll-container' className='overflow-y-hidden'>
         <article>{children}</article>
       </main>
     </>
