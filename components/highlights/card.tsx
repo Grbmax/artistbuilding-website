@@ -6,8 +6,6 @@ import { HighlightsData } from './highlights';
 const HighlightCard: React.FC<HighlightsData> = ({
   brand,
   brandHex,
-  heading,
-  paragraph,
   video,
   className,
   start,
