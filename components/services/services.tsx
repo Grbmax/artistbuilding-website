@@ -13,20 +13,20 @@ const Services = () => {
   return (
     <section
       id='services'
-      className='relative flex-col gap-16 overflow-hidden bg-black py-2 text-3xl text-white md:flex-row md:py-16 md:text-4xl'
+      className='relative flex-col gap-16 overflow-hidden bg-black py-2 text-3xl text-white lg:flex-row lg:py-16 lg:text-4xl'
       style={{ minHeight: '85vh' }}
     >
-      <div className='relative z-10 flex w-full flex-col gap-4 px-6 md:pl-[60px] md:pr-3'>
+      <div className='relative z-10 flex w-full flex-col gap-4 px-6 lg:pl-[60px] lg:pr-3'>
         <Heading
           heading='SERVICES'
           textSize='3xl'
-          className='europa text-4xl md:text-8xl'
+          className='europa text-4xl lg:text-8xl'
         />
         <Paragraph
           paragraph={paragraph}
           textSize='lg'
           font='sherika'
-          className='text-justify text-sm md:text-sm'
+          className='text-justify text-sm lg:text-sm'
         />
         <div className='flex flex-col gap-4'>
           <Paragraph
@@ -35,7 +35,7 @@ const Services = () => {
             }
             textSize='lg'
             font='sherika'
-            className='text-left text-sm font-bold md:text-sm'
+            className='text-left text-sm font-bold lg:text-sm'
           />
           <Link
             href={
@@ -49,8 +49,8 @@ const Services = () => {
           </Link>
         </div>
       </div>
-      <div className='z-10 flex h-min w-full px-6 pt-6 md:px-0 md:pt-0'>
-        <div className='flex w-full items-center gap-4 md:gap-24'>
+      <div className='z-10 flex h-min w-full px-6 pt-6 lg:px-0 lg:pt-0'>
+        <div className='flex w-full items-center gap-4 lg:gap-24'>
           <div className='flex w-full flex-col gap-5'>
             <ServicesCard heading='COMPOSITING' />
             <ServicesCard heading='ROTOSCOPING' />

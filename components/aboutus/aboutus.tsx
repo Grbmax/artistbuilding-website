@@ -11,37 +11,37 @@ const AboutUs = () => {
   return (
     <section
       id='about-us'
-      className='relative flex-col gap-16 bg-black py-6 text-3xl text-white md:flex md:py-16 md:text-4xl'
+      className='relative flex-col gap-16 bg-black py-6 text-3xl text-white lg:flex lg:py-16 lg:text-4xl'
     >
       <Image
         src={bgImage}
         width={1100}
         height={800}
         quality={100}
-        className='absolute bottom-0 right-5 z-0 hidden md:block'
+        className='absolute bottom-0 right-5 z-0 hidden lg:block'
         alt='bg-image'
       />
-      <div className='z-10 flex w-full flex-col items-start justify-between px-6 md:flex-row md:px-36'>
-        <div className='z-10 flex h-full w-full md:w-3/5'>
+      <div className='z-10 flex w-full flex-col items-start justify-between px-6 lg:flex-row lg:px-36'>
+        <div className='z-10 flex h-full w-full lg:w-3/5'>
           <div className='flex h-full w-full flex-col gap-3'>
             <Heading
               heading={'ABOUT US'}
               textSize='xl'
-              className='europa text-4xl font-semibold md:text-8xl'
+              className='europa text-4xl font-semibold lg:text-8xl'
             />
             <Paragraph
               paragraph={paragraph}
               textSize='xs'
               font='sherika'
-              className='text-left text-sm md:text-xl'
+              className='text-left text-sm lg:text-xl'
             />
           </div>
         </div>
-        <div className='relative flex h-[450px] w-full md:w-1/3'>
+        <div className='relative flex h-[450px] w-full lg:w-1/3'>
           <Image
             src='/website-assets/about.png'
             fill
-            className='object-contain opacity-40 md:opacity-100'
+            className='object-contain opacity-40 lg:opacity-100'
             quality={100}
             alt='about-image'
           />
