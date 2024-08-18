@@ -16,16 +16,16 @@ const Clientele = () => {
         width={400}
         height={600}
         quality={100}
-        className='absolute bottom-0 left-0 z-0 hidden md:block'
+        className='absolute bottom-0 left-0 z-0 hidden lg:block'
         alt='bg-image'
       />
-      <div className='z-10 flex h-full w-full flex-col items-start justify-between px-6 md:flex-row md:items-center md:px-36'>
-        <div className='flex h-min w-full md:w-3/5'>
+      <div className='z-10 flex h-full w-full flex-col items-start justify-between px-6 lg:flex-row lg:items-center lg:px-36'>
+        <div className='flex h-min w-full lg:w-3/5'>
           <div className='flex h-full w-full flex-col gap-3'>
             <Heading
               heading={'OUR CLIENTS'}
               textSize='xl'
-              className='europa text-4xl font-semibold md:text-4xl'
+              className='europa text-4xl font-semibold lg:text-4xl'
             />
           </div>
         </div>

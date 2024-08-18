@@ -116,36 +116,36 @@ const Contact = () => {
   return (
     <section
       id='contact'
-      className='relative flex flex-col gap-16 bg-black py-16 text-3xl text-white md:flex-row md:text-4xl'
+      className='relative flex flex-col gap-16 bg-black py-16 text-3xl text-white lg:flex-row lg:text-4xl'
     >
-      <div className='flex w-full flex-col justify-between gap-14 px-6 md:flex-row md:px-32'>
-        <div className='flex w-full flex-col gap-10 md:w-1/3'>
+      <div className='flex w-full flex-col justify-between gap-14 px-6 lg:flex-row lg:px-32'>
+        <div className='flex w-full flex-col gap-10 lg:w-1/3'>
           <Heading
             heading='CONTACT US'
             font='sherika'
-            className='text-2xl md:text-3xl'
+            className='text-2xl lg:text-3xl'
           />
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-3'>
               <Mail size={18} />
-              <h2 className='text-base md:text-xl'>
+              <h2 className='text-base lg:text-xl'>
                 artistbuildingstudio@gmail.com
               </h2>
             </div>
             <div className='flex items-center gap-3'>
               <Phone size={18} />
-              <h2 className='text-base md:text-xl'>+91-6232086836</h2>
+              <h2 className='text-base lg:text-xl'>+91-8269528424</h2>
             </div>
           </div>
           <div className='flex items-center gap-3'>
-            <h2 className='h-full text-base md:text-xl'>
+            <h2 className='h-full text-base lg:text-xl'>
               HIG 10, Old Subhash Nagar, Ashoka Garden, Bhopal, Madhya Pradesh,
               India
             </h2>
           </div>
         </div>
         <form
-          className='flex w-full flex-col justify-evenly gap-5 md:w-1/2'
+          className='flex w-full flex-col justify-evenly gap-5 lg:w-1/2'
           onSubmit={handleSubmit}
         >
           <Input
